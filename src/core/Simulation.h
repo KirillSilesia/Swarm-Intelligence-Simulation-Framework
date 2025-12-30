@@ -7,14 +7,13 @@
 
 class Simulation {
 public:
-    void start(
-        std::shared_ptr<SwarmAlgorithm> algorithm,
+    void start(std::shared_ptr<SwarmAlgorithm> algorithm,
         std::shared_ptr<Scenario> scenario,
-        int agentCount
-    );
+        int agentCount);
 
     void update(float deltaTime);
     bool isFinished() const;
+    bool isRunning() const { return m_scenario != nullptr && m_algorithm != nullptr; }
 
 private:
     std::vector<Agent> m_agents;

@@ -92,7 +92,9 @@ int main() {
         renderGUI(sim, agentCount, algoChoice, scenChoice);
 
         // Updating simulation
-        sim.update(0.016f); // dt ~16ms
+        if (sim.isRunning()) {
+            sim.update(0.016f); // dt ~16ms
+        }
 
         ImGui::Render();
         int display_w, display_h;
