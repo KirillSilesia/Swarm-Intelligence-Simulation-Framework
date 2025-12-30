@@ -1,0 +1,24 @@
+﻿  Building Custom Rule C:/Users/kiral/source/repos/Swarm Intelligence/CMakeLists.txt
+  AntColonyOptimization.cpp
+  ArtificialBeeColony.cpp
+  ParticleSwarmOptimization.cpp
+  Agent.cpp
+  Simulation.cpp
+  GUI.cpp
+  main.cpp
+  ExplorationScenario.cpp
+  MazeScenario.cpp
+  TargetSearchScenario.cpp
+  imgui.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  imgui_demo.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  implot.cpp
+  implot_items.cpp
+  implot_demo.cpp
+  Создание кода...
+main.obj : error LNK2005: "public: void __cdecl Simulation::update(float)" (?update@Simulation@@QEAAXM@Z) уже определен в Simulation.obj
+C:\Users\kiral\source\repos\Swarm Intelligence\build\Debug\SwarmSim.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

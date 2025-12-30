@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\kiral\source\repos\Swarm Intelligence\build\CMakeFiles\54168c6ea4eb2dc011d9662f6c20cf91\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\glfw\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\kiral\source\repos\Swarm Intelligence\build\external\glfw\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4A6B19FF-A05F-3A7F-BF18-B289914D413E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
