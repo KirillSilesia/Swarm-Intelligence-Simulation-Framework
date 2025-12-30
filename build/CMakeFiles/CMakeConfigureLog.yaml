@@ -24,7 +24,7 @@ events:
       The output was:
       0
       Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-      Сборка начата 30.12.2025 13:51:29.
+      Сборка начата 30.12.2025 14:08:55.
       
       Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\3.28.0-msvc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:01.31
+      Прошло времени 00:00:01.30
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -72,8 +72,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-gqi20b"
-      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-gqi20b"
+      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-an4ksu"
+      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-an4ksu"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -82,40 +82,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-gqi20b'
+        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-an4ksu'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_99526.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_dfa09.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 30.12.2025 13:51:30.
+        Сборка начата 30.12.2025 14:08:57.
         
-        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gqi20b\\cmTC_99526.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-an4ksu\\cmTC_dfa09.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_99526.dir\\Debug\\".
+          Создание каталога "cmTC_dfa09.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gqi20b\\Debug\\".
-          Создание каталога "cmTC_99526.dir\\Debug\\cmTC_99526.tlog\\".
+          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-an4ksu\\Debug\\".
+          Создание каталога "cmTC_dfa09.dir\\Debug\\cmTC_dfa09.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_99526.dir\\Debug\\cmTC_99526.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_99526.dir\\Debug\\cmTC_99526.tlog\\unsuccessfulbuild".
+          Создание "cmTC_dfa09.dir\\Debug\\cmTC_dfa09.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_dfa09.dir\\Debug\\cmTC_dfa09.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_99526.dir\\Debug\\\\" /Fd"cmTC_99526.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_dfa09.dir\\Debug\\\\" /Fd"cmTC_dfa09.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_99526.dir\\Debug\\\\" /Fd"cmTC_99526.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_dfa09.dir\\Debug\\\\" /Fd"cmTC_dfa09.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gqi20b\\Debug\\cmTC_99526.exe" /INCREMENTAL /ILK:"cmTC_99526.dir\\Debug\\cmTC_99526.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-gqi20b/Debug/cmTC_99526.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-gqi20b/Debug/cmTC_99526.lib" /MACHINE:X64  /machine:x64 cmTC_99526.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_99526.vcxproj -> C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gqi20b\\Debug\\cmTC_99526.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-an4ksu\\Debug\\cmTC_dfa09.exe" /INCREMENTAL /ILK:"cmTC_dfa09.dir\\Debug\\cmTC_dfa09.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-an4ksu/Debug/cmTC_dfa09.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-an4ksu/Debug/cmTC_dfa09.lib" /MACHINE:X64  /machine:x64 cmTC_dfa09.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_dfa09.vcxproj -> C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-an4ksu\\Debug\\cmTC_dfa09.exe
         FinalizeBuildStatus:
-          Файл "cmTC_99526.dir\\Debug\\cmTC_99526.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_99526.dir\\Debug\\cmTC_99526.tlog\\cmTC_99526.lastbuildstate".
-        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gqi20b\\cmTC_99526.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_dfa09.dir\\Debug\\cmTC_dfa09.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_dfa09.dir\\Debug\\cmTC_dfa09.tlog\\cmTC_dfa09.lastbuildstate".
+        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-an4ksu\\cmTC_dfa09.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:01.37
+        Прошло времени 00:00:01.36
         
       exitCode: 0
   -
@@ -134,7 +134,7 @@ events:
       The output was:
       0
       Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-      Сборка начата 30.12.2025 13:51:32.
+      Сборка начата 30.12.2025 14:08:59.
       
       Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\3.28.0-msvc1\\CompilerIdC\\CompilerIdC.vcxproj" в узле 1 (целевые объекты по умолчанию).
       PrepareForBuild:
@@ -163,7 +163,7 @@ events:
           Предупреждений: 0
           Ошибок: 0
       
-      Прошло времени 00:00:01.31
+      Прошло времени 00:00:01.33
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -182,8 +182,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-3xffpi"
-      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-3xffpi"
+      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-9m9slg"
+      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-9m9slg"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -192,40 +192,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-3xffpi'
+        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-9m9slg'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_31efc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_de10e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 30.12.2025 13:51:34.
+        Сборка начата 30.12.2025 14:09:00.
         
-        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xffpi\\cmTC_31efc.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9m9slg\\cmTC_de10e.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_31efc.dir\\Debug\\".
+          Создание каталога "cmTC_de10e.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xffpi\\Debug\\".
-          Создание каталога "cmTC_31efc.dir\\Debug\\cmTC_31efc.tlog\\".
+          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9m9slg\\Debug\\".
+          Создание каталога "cmTC_de10e.dir\\Debug\\cmTC_de10e.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_31efc.dir\\Debug\\cmTC_31efc.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_31efc.dir\\Debug\\cmTC_31efc.tlog\\unsuccessfulbuild".
+          Создание "cmTC_de10e.dir\\Debug\\cmTC_de10e.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_de10e.dir\\Debug\\cmTC_de10e.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_31efc.dir\\Debug\\\\" /Fd"cmTC_31efc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_de10e.dir\\Debug\\\\" /Fd"cmTC_de10e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_31efc.dir\\Debug\\\\" /Fd"cmTC_31efc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_de10e.dir\\Debug\\\\" /Fd"cmTC_de10e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xffpi\\Debug\\cmTC_31efc.exe" /INCREMENTAL /ILK:"cmTC_31efc.dir\\Debug\\cmTC_31efc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-3xffpi/Debug/cmTC_31efc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-3xffpi/Debug/cmTC_31efc.lib" /MACHINE:X64  /machine:x64 cmTC_31efc.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_31efc.vcxproj -> C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xffpi\\Debug\\cmTC_31efc.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9m9slg\\Debug\\cmTC_de10e.exe" /INCREMENTAL /ILK:"cmTC_de10e.dir\\Debug\\cmTC_de10e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-9m9slg/Debug/cmTC_de10e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-9m9slg/Debug/cmTC_de10e.lib" /MACHINE:X64  /machine:x64 cmTC_de10e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_de10e.vcxproj -> C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9m9slg\\Debug\\cmTC_de10e.exe
         FinalizeBuildStatus:
-          Файл "cmTC_31efc.dir\\Debug\\cmTC_31efc.tlog\\unsuccessfulbuild" удаляется.
-          Обращение к "cmTC_31efc.dir\\Debug\\cmTC_31efc.tlog\\cmTC_31efc.lastbuildstate".
-        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xffpi\\cmTC_31efc.vcxproj" завершена (целевые объекты по умолчанию).
+          Файл "cmTC_de10e.dir\\Debug\\cmTC_de10e.tlog\\unsuccessfulbuild" удаляется.
+          Обращение к "cmTC_de10e.dir\\Debug\\cmTC_de10e.tlog\\cmTC_de10e.lastbuildstate".
+        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9m9slg\\cmTC_de10e.vcxproj" завершена (целевые объекты по умолчанию).
         
         Сборка успешно завершена.
             Предупреждений: 0
             Ошибок: 0
         
-        Прошло времени 00:00:01.27
+        Прошло времени 00:00:01.32
         
       exitCode: 0
   -
@@ -239,8 +239,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-sxdv6m"
-      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-sxdv6m"
+      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-4f5tpl"
+      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-4f5tpl"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -250,40 +250,40 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-sxdv6m'
+        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-4f5tpl'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_40843.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_09d9d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 30.12.2025 13:51:36.
+        Сборка начата 30.12.2025 14:09:02.
         
-        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\cmTC_40843.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\cmTC_09d9d.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_40843.dir\\Debug\\".
+          Создание каталога "cmTC_09d9d.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\Debug\\".
-          Создание каталога "cmTC_40843.dir\\Debug\\cmTC_40843.tlog\\".
+          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\Debug\\".
+          Создание каталога "cmTC_09d9d.dir\\Debug\\cmTC_09d9d.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_40843.dir\\Debug\\cmTC_40843.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_40843.dir\\Debug\\cmTC_40843.tlog\\unsuccessfulbuild".
+          Создание "cmTC_09d9d.dir\\Debug\\cmTC_09d9d.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_09d9d.dir\\Debug\\cmTC_09d9d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_40843.dir\\Debug\\\\" /Fd"cmTC_40843.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_09d9d.dir\\Debug\\\\" /Fd"cmTC_09d9d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\src.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_40843.dir\\Debug\\\\" /Fd"cmTC_40843.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\src.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_09d9d.dir\\Debug\\\\" /Fd"cmTC_09d9d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\src.c"
           src.c
-        C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\cmTC_40843.vcxproj]
-        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\cmTC_40843.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+        C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\cmTC_09d9d.vcxproj]
+        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\cmTC_09d9d.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\cmTC_40843.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\cmTC_09d9d.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект ClCompile) -> 
-          C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sxdv6m\\cmTC_40843.vcxproj]
+          C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\src.c(1,10): error C1083: Не удается открыть файл включение: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4f5tpl\\cmTC_09d9d.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:01.28
+        Прошло времени 00:00:01.35
         
       exitCode: 1
   -
@@ -296,8 +296,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-2mw0vf"
-      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-2mw0vf"
+      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-ady2pw"
+      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-ady2pw"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -307,42 +307,42 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-2mw0vf'
+        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-ady2pw'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_674a5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5c909.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 30.12.2025 13:51:38.
+        Сборка начата 30.12.2025 14:09:04.
         
-        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\cmTC_674a5.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\cmTC_5c909.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_674a5.dir\\Debug\\".
+          Создание каталога "cmTC_5c909.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\Debug\\".
-          Создание каталога "cmTC_674a5.dir\\Debug\\cmTC_674a5.tlog\\".
+          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\Debug\\".
+          Создание каталога "cmTC_5c909.dir\\Debug\\cmTC_5c909.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_674a5.dir\\Debug\\cmTC_674a5.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_674a5.dir\\Debug\\cmTC_674a5.tlog\\unsuccessfulbuild".
+          Создание "cmTC_5c909.dir\\Debug\\cmTC_5c909.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_5c909.dir\\Debug\\cmTC_5c909.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_674a5.dir\\Debug\\\\" /Fd"cmTC_674a5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5c909.dir\\Debug\\\\" /Fd"cmTC_5c909.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_674a5.dir\\Debug\\\\" /Fd"cmTC_674a5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5c909.dir\\Debug\\\\" /Fd"cmTC_5c909.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\Debug\\cmTC_674a5.exe" /INCREMENTAL /ILK:"cmTC_674a5.dir\\Debug\\cmTC_674a5.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-2mw0vf/Debug/cmTC_674a5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-2mw0vf/Debug/cmTC_674a5.lib" /MACHINE:X64  /machine:x64 cmTC_674a5.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\cmTC_674a5.vcxproj]
-        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\cmTC_674a5.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\Debug\\cmTC_5c909.exe" /INCREMENTAL /ILK:"cmTC_5c909.dir\\Debug\\cmTC_5c909.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-ady2pw/Debug/cmTC_5c909.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-ady2pw/Debug/cmTC_5c909.lib" /MACHINE:X64  /machine:x64 cmTC_5c909.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\cmTC_5c909.vcxproj]
+        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\cmTC_5c909.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\cmTC_674a5.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\cmTC_5c909.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2mw0vf\\cmTC_674a5.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ady2pw\\cmTC_5c909.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:01.17
+        Прошло времени 00:00:01.26
         
       exitCode: 1
   -
@@ -355,8 +355,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-m8plup"
-      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-m8plup"
+      source: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-bk39ue"
+      binary: "C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-bk39ue"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -366,42 +366,42 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-m8plup'
+        Change Dir: 'C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-bk39ue'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cf5c1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4905b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Версия MSBuild 17.9.5+33de0b227 для .NET Framework
-        Сборка начата 30.12.2025 13:51:39.
+        Сборка начата 30.12.2025 14:09:06.
         
-        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\cmTC_cf5c1.vcxproj" в узле 1 (целевые объекты по умолчанию).
+        Проект "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\cmTC_4905b.vcxproj" в узле 1 (целевые объекты по умолчанию).
         PrepareForBuild:
-          Создание каталога "cmTC_cf5c1.dir\\Debug\\".
+          Создание каталога "cmTC_4905b.dir\\Debug\\".
           Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
-          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\Debug\\".
-          Создание каталога "cmTC_cf5c1.dir\\Debug\\cmTC_cf5c1.tlog\\".
+          Создание каталога "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\Debug\\".
+          Создание каталога "cmTC_4905b.dir\\Debug\\cmTC_4905b.tlog\\".
         InitializeBuildStatus:
-          Создание "cmTC_cf5c1.dir\\Debug\\cmTC_cf5c1.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
-          Обращение к "cmTC_cf5c1.dir\\Debug\\cmTC_cf5c1.tlog\\unsuccessfulbuild".
+          Создание "cmTC_4905b.dir\\Debug\\cmTC_4905b.tlog\\unsuccessfulbuild", так как было задано "AlwaysCreate".
+          Обращение к "cmTC_4905b.dir\\Debug\\cmTC_4905b.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cf5c1.dir\\Debug\\\\" /Fd"cmTC_cf5c1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4905b.dir\\Debug\\\\" /Fd"cmTC_4905b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\CheckFunctionExists.c"
           Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.39.33521 для x64
           (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cf5c1.dir\\Debug\\\\" /Fd"cmTC_cf5c1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4905b.dir\\Debug\\\\" /Fd"cmTC_4905b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\Debug\\cmTC_cf5c1.exe" /INCREMENTAL /ILK:"cmTC_cf5c1.dir\\Debug\\cmTC_cf5c1.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-m8plup/Debug/cmTC_cf5c1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-m8plup/Debug/cmTC_cf5c1.lib" /MACHINE:X64  /machine:x64 cmTC_cf5c1.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\cmTC_cf5c1.vcxproj]
-        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\cmTC_cf5c1.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\Debug\\cmTC_4905b.exe" /INCREMENTAL /ILK:"cmTC_4905b.dir\\Debug\\cmTC_4905b.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-bk39ue/Debug/cmTC_4905b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/Swarm Intelligence/build/CMakeFiles/CMakeScratch/TryCompile-bk39ue/Debug/cmTC_4905b.lib" /MACHINE:X64  /machine:x64 cmTC_4905b.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\cmTC_4905b.vcxproj]
+        Сборка проекта "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\cmTC_4905b.vcxproj" завершена (целевые объекты по умолчанию) с ошибкой.
         
         Ошибка сборки.
         
-        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\cmTC_cf5c1.vcxproj" (целевой объект по умолчанию) (1) ->
+        "C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\cmTC_4905b.vcxproj" (целевой объект по умолчанию) (1) ->
         (Целевой объект Link) -> 
-          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m8plup\\cmTC_cf5c1.vcxproj]
+          LINK : fatal error LNK1104: не удается открыть файл "pthread.lib" [C:\\Users\\kiral\\source\\repos\\Swarm Intelligence\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bk39ue\\cmTC_4905b.vcxproj]
         
             Предупреждений: 0
             Ошибок: 1
         
-        Прошло времени 00:00:01.16
+        Прошло времени 00:00:01.19
         
       exitCode: 1
 ...

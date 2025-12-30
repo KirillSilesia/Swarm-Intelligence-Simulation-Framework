@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <memory>
 
 #include "imgui.h"
 #include "implot.h"
@@ -10,6 +11,7 @@
 #include <GLFW/glfw3.h>
 
 #include "core/Agent.h"
+#include "core/Simulation.h"
 #include "scenarios/Scenario.h"
 #include "algorithms/SwarmAlgorithm.h"
 #include "algorithms/ArtificialBeeColony.h"
@@ -18,54 +20,6 @@
 #include "scenarios/TargetSearchScenario.h"
 #include "scenarios/ExplorationScenario.h"
 #include "scenarios/MazeScenario.h"
-
-// ==================== Simulation ====================
-struct Simulation {
-    std::vector<Agent> agents;
-    Scenario* scenario = nullptr;
-    SwarmAlgorithm* algorithm = nullptr;
-    bool running = false;
-
-    void start(int agentCount, int algoChoice, int scenChoice) {
-        agents.clear();
-        agents.resize(agentCount);
-
-        // Scenario choise
-        switch (scenChoice) {
-        case 0: scenario = new MazeScenario(20,20); break;
-        case 1: scenario = new ExplorationScenario(); break;
-        case 2: scenario = new TargetSearchScenario(); break;
-        }
-
-        // Algorithmm choise
-        switch (algoChoice) {
-        case 0: algorithm = new AntColonyOptimization(); break;
-        case 1: algorithm = new ParticleSwarmOptimization(); break;
-        case 2: algorithm = new ArtificialBeeColony(); break;
-        }
-
-        if (algorithm && scenario) {
-            algorithm->initialize(agents, *scenario);
-            running = true;
-            std::cout << "Simulation started!\n";
-        }
-    }
-
-    void update(float dt) {
-        if (running && algorithm && scenario) {
-            algorithm->update(agents, *scenario, dt);
-            if (scenario->isFinished()) {
-                running = false;
-                std::cout << "Simulation finished!\n";
-            }
-        }
-    }
-
-    ~Simulation() {
-        delete scenario;
-        delete algorithm;
-    }
-};
 
 // ==================== GUI ====================
 void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoice) {
@@ -80,7 +34,27 @@ void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoic
     ImGui::Combo("Scenario", &scenChoice, scenes, IM_ARRAYSIZE(scenes));
 
     if (ImGui::Button("Run Simulation")) {
-        sim.start(agentCount, algoChoice, scenChoice);
+        // Choose algorithm
+        std::shared_ptr<SwarmAlgorithm> algorithm;
+        switch (algoChoice) {
+        case 0: algorithm = std::make_shared<AntColonyOptimization>(); break;
+        case 1: algorithm = std::make_shared<ParticleSwarmOptimization>(); break;
+        case 2: algorithm = std::make_shared<ArtificialBeeColony>(); break;
+        }
+
+        // Choose scenario
+        std::shared_ptr<Scenario> scenario;
+        switch (scenChoice) {
+        case 0: scenario = std::make_shared<MazeScenario>(20, 20); break;
+        case 1: scenario = std::make_shared<ExplorationScenario>(); break;
+        case 2: scenario = std::make_shared<TargetSearchScenario>(); break;
+        }
+
+        // Launch simulation
+        if (algorithm && scenario) {
+            sim.start(algorithm, scenario, agentCount);
+            std::cout << "Simulation started!\n";
+        }
     }
 
     ImGui::End();
