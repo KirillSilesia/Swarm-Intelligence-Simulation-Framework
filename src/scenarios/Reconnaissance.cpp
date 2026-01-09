@@ -1,8 +1,8 @@
 #include "Reconnaissance.h"
 #include <cstdlib>
 
-Reconnaissance::Reconnaissance(ImVec2 topLeft, ImVec2 bottomRight)
-    : m_corridorTopLeft(topLeft), m_corridorBottomRight(bottomRight), m_finished(false)
+Reconnaissance::Reconnaissance(ImVec2 fieldSize)
+    : m_fieldSize(fieldSize), m_finished(false)
 {
     reset();
 }
@@ -14,22 +14,16 @@ const char* Reconnaissance::getName() const {
 void Reconnaissance::reset() {
     m_finished = false;
     m_objects.clear();
-
-    m_objects.push_back(ReconObject(ImVec2(50, 50), 10.0f, 3));
-    m_objects.push_back(ReconObject(ImVec2(150, 100), 10.0f, 3));
-
-    m_objects.push_back(ReconObject(ImVec2(70, 200), 8.0f, 2));
-    m_objects.push_back(ReconObject(ImVec2(120, 220), 8.0f, 2));
-    m_objects.push_back(ReconObject(ImVec2(200, 180), 8.0f, 2));
-
-    m_objects.push_back(ReconObject(ImVec2(40, 300), 5.0f, 1));
-    m_objects.push_back(ReconObject(ImVec2(90, 320), 5.0f, 1));
-    m_objects.push_back(ReconObject(ImVec2(160, 280), 5.0f, 1));
-    m_objects.push_back(ReconObject(ImVec2(220, 310), 5.0f, 1));
+    auto rnd = []() { return (float)rand() / RAND_MAX; };
+    for (int i = 0; i < 2; ++i)
+        m_objects.push_back({ ImVec2(rnd(), rnd()), 8.0f, 3 });
+    for (int i = 0; i < 3; ++i)
+        m_objects.push_back({ ImVec2(rnd(), rnd()), 6.0f, 2 });
+    for (int i = 0; i < 4; ++i)
+        m_objects.push_back({ ImVec2(rnd(), rnd()), 4.0f, 1 });
 }
 
-void Reconnaissance::update(float deltaTime) {
-}
+void Reconnaissance::update(float) {}
 
 bool Reconnaissance::isFinished() const {
     return m_finished;
@@ -37,20 +31,48 @@ bool Reconnaissance::isFinished() const {
 
 void Reconnaissance::draw() {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
+    ImGuiIO& io = ImGui::GetIO();
+    float windowHeight = io.DisplaySize.y;
+    float guiHeight = windowHeight / 3.0f;
+    float availableHeight = windowHeight - guiHeight;
 
-    drawList->AddRectFilled(m_corridorTopLeft, m_corridorBottomRight, IM_COL32(50, 50, 50, 200));
+    float fieldWidth = m_fieldSize.x;
+    float fieldHeight = m_fieldSize.y;
+    float yOffset = guiHeight + (availableHeight - fieldHeight) / 2.0f;
+
+    // Match PathPlanning's origin calculation
+    ImVec2 origin(20, yOffset);
+
+    ImVec2 topLeft = origin;
+    ImVec2 bottomRight(
+        origin.x + fieldWidth,
+        origin.y + fieldHeight
+    );
+
+    drawList->AddRectFilled(
+        topLeft,
+        bottomRight,
+        IM_COL32(50, 50, 50, 200)
+    );
 
     for (const auto& obj : m_objects) {
-        ImU32 color;
-        if (obj.priority == 3) color = IM_COL32(255, 0, 0, 255);
-        else if (obj.priority == 2) color = IM_COL32(255, 255, 0, 255);
-        else color = IM_COL32(0, 255, 0, 255);
-
-        ImVec2 drawPos = ImVec2(
-            m_corridorTopLeft.x + obj.pos.x * (m_corridorBottomRight.x - m_corridorTopLeft.x),
-            m_corridorTopLeft.y + obj.pos.y * (m_corridorBottomRight.y - m_corridorTopLeft.y)
+        ImU32 color =
+            obj.priority == 3 ? IM_COL32(255, 0, 0, 255) :
+            obj.priority == 2 ? IM_COL32(255, 255, 0, 255) :
+            IM_COL32(0, 255, 0, 255);
+        ImVec2 pos(
+            topLeft.x + obj.pos.x * fieldWidth,
+            topLeft.y + obj.pos.y * fieldHeight
         );
-
-        drawList->AddCircleFilled(drawPos, obj.radius, color);
+        drawList->AddCircleFilled(pos, obj.radius, color);
     }
+
+    drawList->AddRect(
+        topLeft,
+        bottomRight,
+        IM_COL32(180, 180, 180, 255),
+        0.0f,
+        0,
+        2.0f
+    );
 }

@@ -7,15 +7,11 @@ struct ReconObject {
     ImVec2 pos;
     float radius;
     int priority;
-
-    ReconObject(const ImVec2& p, float r, int prio)
-        : pos(p), radius(r), priority(prio) {
-    }
 };
 
 class Reconnaissance : public Scenario {
 public:
-    Reconnaissance(int width, int height);
+    Reconnaissance(ImVec2 fieldSize);
 
     const char* getName() const override;
     void reset() override;
@@ -24,8 +20,7 @@ public:
     void draw() override;
 
 private:
-    int m_width;
-    int m_height;
-    bool m_finished;
+    ImVec2 m_fieldSize;
     std::vector<ReconObject> m_objects;
+    bool m_finished;
 };

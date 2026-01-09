@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\CMakeFiles\0dfd9acae5c311872a6636e4f5ed425e\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\CMakeFiles\9fbfbc8da5184e138f247dae6522fbc8\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{7A70F0FF-7331-3294-BB5B-6036795E64C7}</UniqueIdentifier>
+      <UniqueIdentifier>{9D4D54FE-008A-3EB1-89B6-D1C8673A1DE7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

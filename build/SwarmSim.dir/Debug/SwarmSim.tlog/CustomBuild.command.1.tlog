@@ -1,6 +1,6 @@
-^C:\USERS\MI\SOURCE\REPOS\KIRILLSILESIA\SWARM-INTELLIGENCE-SIMULATION-FRAMEWORK\CMAKELISTS.TXT
+^C:\USERS\KIRAL\SOURCE\REPOS\KIRILLSILESIA\SWARM-INTELLIGENCE-SIMULATION-FRAMEWORK\CMAKELISTS.TXT
 setlocal
-D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

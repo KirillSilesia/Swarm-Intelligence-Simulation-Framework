@@ -16,27 +16,9 @@ void ObstacleAvoidance::reset() {
     m_finished = false;
     m_obstacles.clear();
 
-    ImGuiIO& io = ImGui::GetIO();
-    float windowHeight = io.DisplaySize.y;
-
     m_corridorWidth = 600.0f;
     m_corridorHeight = 400.0f;
-
-    float guiHeight = windowHeight / 3.0f;
-    float availableHeight = windowHeight - guiHeight;
-
-    m_corridorTopLeft = Vec2(
-        50.0f,
-        guiHeight + (availableHeight - m_corridorHeight) / 2.0f
-    );
-    m_corridorBottomRight = Vec2(
-        m_corridorTopLeft.x + m_corridorWidth,
-        m_corridorTopLeft.y + m_corridorHeight
-    );
-
     m_gapSize = 60.0f;
-    m_entranceY = m_corridorTopLeft.y + m_corridorHeight / 2.0f;
-    m_exitY = m_entranceY;
 
     generateObstacles();
 }
@@ -47,14 +29,12 @@ void ObstacleAvoidance::generateObstacles() {
     for (int i = 0; i < numObstacles; ++i) {
         Obstacle obs;
 
-        obs.position = Vec2(
-            m_corridorBottomRight.x + 50.0f + (rand() % 200),
-            m_corridorTopLeft.y + 30.0f + (rand() % (int)(m_corridorHeight - 60.0f))
-        );
+        obs.relativeX = 1.0f + (50.0f + (rand() % 200)) / m_corridorWidth;
+        obs.relativeY = (30.0f + (rand() % (int)(m_corridorHeight - 60.0f))) / m_corridorHeight;
 
         obs.velocity = Vec2(
             -(30.0f + (rand() % 70)),
-            (rand() % 40) - 20.0f 
+            (rand() % 40) - 20.0f
         );
 
         obs.size = 15.0f + (rand() % 35);
@@ -73,22 +53,25 @@ void ObstacleAvoidance::generateObstacles() {
     }
 }
 
-bool ObstacleAvoidance::isInsideCorridor(const Vec2& pos) const {
-    if (pos.x < m_corridorTopLeft.x || pos.x > m_corridorBottomRight.x) {
+bool ObstacleAvoidance::isInsideCorridor(const Vec2& pos, const Vec2& topLeft, const Vec2& bottomRight) const {
+    if (pos.x < topLeft.x || pos.x > bottomRight.x) {
         return false;
     }
-    if (pos.y < m_corridorTopLeft.y || pos.y > m_corridorBottomRight.y) {
+    if (pos.y < topLeft.y || pos.y > bottomRight.y) {
         return false;
     }
 
-    if (pos.x < m_corridorTopLeft.x + 10.0f) {
-        if (pos.y < m_exitY - m_gapSize / 2.0f || pos.y > m_exitY + m_gapSize / 2.0f) {
+    float entranceY = topLeft.y + m_corridorHeight / 2.0f;
+    float exitY = entranceY;
+
+    if (pos.x < topLeft.x + 10.0f) {
+        if (pos.y < exitY - m_gapSize / 2.0f || pos.y > exitY + m_gapSize / 2.0f) {
             return false;
         }
     }
 
-    if (pos.x > m_corridorBottomRight.x - 10.0f) {
-        if (pos.y < m_entranceY - m_gapSize / 2.0f || pos.y > m_entranceY + m_gapSize / 2.0f) {
+    if (pos.x > bottomRight.x - 10.0f) {
+        if (pos.y < entranceY - m_gapSize / 2.0f || pos.y > entranceY + m_gapSize / 2.0f) {
             return false;
         }
     }
@@ -97,25 +80,43 @@ bool ObstacleAvoidance::isInsideCorridor(const Vec2& pos) const {
 }
 
 void ObstacleAvoidance::update(float deltaTime) {
+    ImGuiIO& io = ImGui::GetIO();
+    float windowHeight = io.DisplaySize.y;
+    float guiHeight = windowHeight / 3.0f;
+    float availableHeight = windowHeight - guiHeight;
+    float yOffset = guiHeight + (availableHeight - m_corridorHeight) / 2.0f;
+
+    Vec2 corridorTopLeft(20.0f, yOffset);
+    Vec2 corridorBottomRight(corridorTopLeft.x + m_corridorWidth, corridorTopLeft.y + m_corridorHeight);
+
     for (auto& obs : m_obstacles) {
-        obs.position = obs.position + obs.velocity * deltaTime;
+        Vec2 position(
+            corridorTopLeft.x + obs.relativeX * m_corridorWidth,
+            corridorTopLeft.y + obs.relativeY * m_corridorHeight
+        );
+
+        position = position + obs.velocity * deltaTime;
 
         obs.rotation += obs.rotationSpeed * deltaTime;
 
-        if (obs.position.y < m_corridorTopLeft.y + obs.size) {
-            obs.position.y = m_corridorTopLeft.y + obs.size;
+        if (position.y < corridorTopLeft.y + obs.size) {
+            position.y = corridorTopLeft.y + obs.size;
             obs.velocity.y = -obs.velocity.y;
         }
-        if (obs.position.y > m_corridorBottomRight.y - obs.size) {
-            obs.position.y = m_corridorBottomRight.y - obs.size;
+        if (position.y > corridorBottomRight.y - obs.size) {
+            position.y = corridorBottomRight.y - obs.size;
             obs.velocity.y = -obs.velocity.y;
         }
 
-        if (obs.position.x < m_corridorTopLeft.x - obs.size - 100.0f) {
-            obs.position.x = m_corridorBottomRight.x + obs.size + 50.0f + (rand() % 100);
-            obs.position.y = m_corridorTopLeft.y + 30.0f + (rand() % (int)(m_corridorHeight - 60.0f));
+        if (position.x < corridorTopLeft.x - obs.size - 100.0f) {
+            obs.relativeX = 1.0f + (50.0f + (rand() % 100)) / m_corridorWidth;
+            obs.relativeY = (30.0f + (rand() % (int)(m_corridorHeight - 60.0f))) / m_corridorHeight;
             obs.velocity.x = -(30.0f + (rand() % 70));
             obs.velocity.y = (rand() % 40) - 20.0f;
+        }
+        else {
+            obs.relativeX = (position.x - corridorTopLeft.x) / m_corridorWidth;
+            obs.relativeY = (position.y - corridorTopLeft.y) / m_corridorHeight;
         }
     }
 }
@@ -126,16 +127,31 @@ bool ObstacleAvoidance::isFinished() const {
 
 void ObstacleAvoidance::draw() {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
+    ImGuiIO& io = ImGui::GetIO();
+    float windowHeight = io.DisplaySize.y;
+    float guiHeight = windowHeight / 3.0f;
+    float availableHeight = windowHeight - guiHeight;
+
+    float yOffset = guiHeight + (availableHeight - m_corridorHeight) / 2.0f;
+    Vec2 corridorTopLeft(20.0f, yOffset);
+    Vec2 corridorBottomRight(corridorTopLeft.x + m_corridorWidth, corridorTopLeft.y + m_corridorHeight);
+
+    float entranceY = corridorTopLeft.y + m_corridorHeight / 2.0f;
+    float exitY = entranceY;
 
     drawList->PushClipRect(
-        ImVec2(m_corridorTopLeft.x, m_corridorTopLeft.y),
-        ImVec2(m_corridorBottomRight.x, m_corridorBottomRight.y),
+        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
+        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
         true
     );
 
     for (const auto& obs : m_obstacles) {
         ImU32 obstacleColor = IM_COL32(255, 165, 0, 255);
-        ImVec2 pos(obs.position.x, obs.position.y);
+
+        ImVec2 pos(
+            corridorTopLeft.x + obs.relativeX * m_corridorWidth,
+            corridorTopLeft.y + obs.relativeY * m_corridorHeight
+        );
 
         switch (obs.shape) {
         case ObstacleShape::Circle:
@@ -188,36 +204,36 @@ void ObstacleAvoidance::draw() {
     float wallThickness = 3.0f;
 
     drawList->AddLine(
-        ImVec2(m_corridorTopLeft.x, m_corridorTopLeft.y),
-        ImVec2(m_corridorBottomRight.x, m_corridorTopLeft.y),
+        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
+        ImVec2(corridorBottomRight.x, corridorTopLeft.y),
         wallColor, wallThickness
     );
 
     drawList->AddLine(
-        ImVec2(m_corridorTopLeft.x, m_corridorBottomRight.y),
-        ImVec2(m_corridorBottomRight.x, m_corridorBottomRight.y),
+        ImVec2(corridorTopLeft.x, corridorBottomRight.y),
+        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
         wallColor, wallThickness
     );
 
     drawList->AddLine(
-        ImVec2(m_corridorTopLeft.x, m_corridorTopLeft.y),
-        ImVec2(m_corridorTopLeft.x, m_exitY - m_gapSize / 2.0f),
+        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
+        ImVec2(corridorTopLeft.x, exitY - m_gapSize / 2.0f),
         wallColor, wallThickness
     );
     drawList->AddLine(
-        ImVec2(m_corridorTopLeft.x, m_exitY + m_gapSize / 2.0f),
-        ImVec2(m_corridorTopLeft.x, m_corridorBottomRight.y),
+        ImVec2(corridorTopLeft.x, exitY + m_gapSize / 2.0f),
+        ImVec2(corridorTopLeft.x, corridorBottomRight.y),
         wallColor, wallThickness
     );
 
     drawList->AddLine(
-        ImVec2(m_corridorBottomRight.x, m_corridorTopLeft.y),
-        ImVec2(m_corridorBottomRight.x, m_entranceY - m_gapSize / 2.0f),
+        ImVec2(corridorBottomRight.x, corridorTopLeft.y),
+        ImVec2(corridorBottomRight.x, entranceY - m_gapSize / 2.0f),
         wallColor, wallThickness
     );
     drawList->AddLine(
-        ImVec2(m_corridorBottomRight.x, m_entranceY + m_gapSize / 2.0f),
-        ImVec2(m_corridorBottomRight.x, m_corridorBottomRight.y),
+        ImVec2(corridorBottomRight.x, entranceY + m_gapSize / 2.0f),
+        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
         wallColor, wallThickness
     );
 
@@ -226,14 +242,14 @@ void ObstacleAvoidance::draw() {
     float markerSize = 12.0f;
 
     drawList->AddRectFilled(
-        ImVec2(m_corridorBottomRight.x - markerSize / 2, m_entranceY - markerSize / 2),
-        ImVec2(m_corridorBottomRight.x + markerSize / 2, m_entranceY + markerSize / 2),
+        ImVec2(corridorBottomRight.x - markerSize / 2, entranceY - markerSize / 2),
+        ImVec2(corridorBottomRight.x + markerSize / 2, entranceY + markerSize / 2),
         entranceColor
     );
 
     drawList->AddRectFilled(
-        ImVec2(m_corridorTopLeft.x - markerSize / 2, m_exitY - markerSize / 2),
-        ImVec2(m_corridorTopLeft.x + markerSize / 2, m_exitY + markerSize / 2),
+        ImVec2(corridorTopLeft.x - markerSize / 2, exitY - markerSize / 2),
+        ImVec2(corridorTopLeft.x + markerSize / 2, exitY + markerSize / 2),
         exitColor
     );
 }

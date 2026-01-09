@@ -75,7 +75,7 @@ void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoic
         std::shared_ptr<Scenario> scenario;
         switch (scenChoice) {
         case 0: scenario = std::make_shared<PathPlanning>(20, 20); break;
-        case 1: scenario = std::make_shared<Reconnaissance>(800, 600); break;
+        case 1: scenario = std::make_shared<Reconnaissance>(ImVec2(400.0f, 400.0f));  break;
         case 2: scenario = std::make_shared<TargetSearch>(); break;
 		case 3: scenario = std::make_shared<ObstacleAvoidance>(800, 600); break;
         }

@@ -4,16 +4,16 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Windows - 10.0.26100 - AMD64
+      The system is: Windows - 10.0.19045 - AMD64
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
@@ -23,46 +23,37 @@ events:
       
       The output was:
       0
-      MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-      Build started 08/01/2026 12:25:55.
+      ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:37:52.
       
-      Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       PrepareForBuild:
-        Creating directory "Debug\\".
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "Debug\\".
+        ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "Debug\\CompilerIdCXX.tlog\\".
       InitializeBuildStatus:
-        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-      VcpkgTripletSelection:
-        Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-        Using normalized configuration "Release"
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+        ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
         CMakeCXXCompilerId.cpp
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.exe
-      AppLocalFromInstalled:
-        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
-        'pwsh.exe' is not recognized as an internal or external command,
-        operable program or batch file.
-        The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
-        "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
-        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
-        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+        ╨д╨░╨╣╨╗ "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+        ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       
-      Build succeeded.
-          0 Warning(s)
-          0 Error(s)
+      ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
+          ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+          ╨Ю╤И╨╕╨▒╨╛╨║: 0
       
-      Time Elapsed 00:00:03.99
+      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.32
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -70,19 +61,19 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/4.0.0/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/3.31.6-msvc6/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-islnrj"
-      binary: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-islnrj"
+      source: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-wkuykp"
+      binary: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-wkuykp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -92,62 +83,53 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-islnrj'
+        Change Dir: 'C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-wkuykp'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_62135.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 08/01/2026 12:26:00.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_36aeb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:37:54.
         
-        Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\cmTC_62135.vcxproj" on node 1 (default targets).
+        ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wkuykp\\cmTC_36aeb.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          Creating directory "cmTC_62135.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\".
-          Creating directory "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_36aeb.dir\\Debug\\".
+          ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wkuykp\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_36aeb.dir\\Debug\\cmTC_36aeb.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\unsuccessfulbuild".
-        VcpkgTripletSelection:
-          Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-          Using normalized configuration "Debug"
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_36aeb.dir\\Debug\\cmTC_36aeb.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_36aeb.dir\\Debug\\cmTC_36aeb.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_62135.dir\\Debug\\\\" /Fd"cmTC_62135.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_62135.dir\\Debug\\\\" /Fd"cmTC_62135.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\CMake\\share\\cmake-4.0\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_36aeb.dir\\Debug\\\\" /Fd"cmTC_36aeb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.44.35222 ╨┤╨╗╤П x64
+          (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_36aeb.dir\\Debug\\\\" /Fd"cmTC_36aeb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\cmTC_62135.exe" /INCREMENTAL /ILK:"cmTC_62135.dir\\Debug\\cmTC_62135.ilk" /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-islnrj/Debug/cmTC_62135.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-islnrj/Debug/cmTC_62135.lib" /MACHINE:X64  /machine:x64 cmTC_62135.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_62135.vcxproj -> C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\cmTC_62135.exe
-        AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\cmTC_62135.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\cmTC_62135.write.1u.tlog" "cmTC_62135.dir\\Debug\\vcpkg.applocal.log"
-          'pwsh.exe' is not recognized as an internal or external command,
-          operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\cmTC_62135.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\cmTC_62135.write.1u.tlog" "cmTC_62135.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\Debug\\cmTC_62135.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\cmTC_62135.write.1u.tlog" "cmTC_62135.dir\\Debug\\vcpkg.applocal.log"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wkuykp\\Debug\\cmTC_36aeb.exe" /INCREMENTAL /ILK:"cmTC_36aeb.dir\\Debug\\cmTC_36aeb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-wkuykp/Debug/cmTC_36aeb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-wkuykp/Debug/cmTC_36aeb.lib" /MACHINE:X64  /machine:x64 cmTC_36aeb.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_36aeb.vcxproj -> C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wkuykp\\Debug\\cmTC_36aeb.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\unsuccessfulbuild".
-          Touching "cmTC_62135.dir\\Debug\\cmTC_62135.tlog\\cmTC_62135.lastbuildstate".
-        Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-islnrj\\cmTC_62135.vcxproj" (default targets).
+          ╨д╨░╨╣╨╗ "cmTC_36aeb.dir\\Debug\\cmTC_36aeb.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_36aeb.dir\\Debug\\cmTC_36aeb.tlog\\cmTC_36aeb.lastbuildstate".
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wkuykp\\cmTC_36aeb.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         
-        Build succeeded.
-            0 Warning(s)
-            0 Error(s)
+        ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
+            ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+            ╨Ю╤И╨╕╨▒╨╛╨║: 0
         
-        Time Elapsed 00:00:06.08
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.31
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
         implicit libs: []
         implicit objs: []
         implicit dirs: []
@@ -157,20 +139,20 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:264 (cmake_determine_linker_id)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.43.34809.0
+      Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "external/glfw/CMakeLists.txt:3 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -180,46 +162,37 @@ events:
       
       The output was:
       0
-      MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-      Build started 08/01/2026 12:26:07.
+      ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+      ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:37:56.
       
-      Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       PrepareForBuild:
-        Creating directory "Debug\\".
-        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-        Creating directory "Debug\\CompilerIdC.tlog\\".
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "Debug\\".
+        ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "Debug\\CompilerIdC.tlog\\".
       InitializeBuildStatus:
-        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-      VcpkgTripletSelection:
-        Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-        Using normalized configuration "Release"
+        ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "Debug\\CompilerIdC.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+        ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
       ClCompile:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
         CMakeCCompilerId.c
       Link:
-        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.exe
-      AppLocalFromInstalled:
-        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
-        'pwsh.exe' is not recognized as an internal or external command,
-        operable program or batch file.
-        The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
-        "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
-        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\Hostx64\\x64\\cl.exe
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
       FinalizeBuildStatus:
-        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
-        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\4.0.0\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+        ╨д╨░╨╣╨╗ "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+        ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\3.31.6-msvc6\\CompilerIdC\\CompilerIdC.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
       
-      Build succeeded.
-          0 Warning(s)
-          0 Error(s)
+      ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
+          ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+          ╨Ю╤И╨╕╨▒╨╛╨║: 0
       
-      Time Elapsed 00:00:05.59
+      ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.35
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -227,19 +200,19 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/4.0.0/CompilerIdC/CompilerIdC.exe
+        C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/3.31.6-msvc6/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "external/glfw/CMakeLists.txt:3 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-qb5sfg"
-      binary: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-qb5sfg"
+      source: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-gez50f"
+      binary: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-gez50f"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -248,62 +221,53 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-qb5sfg'
+        Change Dir: 'C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-gez50f'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0de02.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 08/01/2026 12:26:14.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1a286.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:37:58.
         
-        Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\cmTC_0de02.vcxproj" on node 1 (default targets).
+        ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gez50f\\cmTC_1a286.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          Creating directory "cmTC_0de02.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\".
-          Creating directory "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_1a286.dir\\Debug\\".
+          ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gez50f\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_1a286.dir\\Debug\\cmTC_1a286.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\unsuccessfulbuild".
-        VcpkgTripletSelection:
-          Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-          Using normalized configuration "Debug"
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_1a286.dir\\Debug\\cmTC_1a286.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_1a286.dir\\Debug\\cmTC_1a286.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0de02.dir\\Debug\\\\" /Fd"cmTC_0de02.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0de02.dir\\Debug\\\\" /Fd"cmTC_0de02.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "D:\\CMake\\share\\cmake-4.0\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1a286.dir\\Debug\\\\" /Fd"cmTC_1a286.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.44.35222 ╨┤╨╗╤П x64
+          (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1a286.dir\\Debug\\\\" /Fd"cmTC_1a286.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\cmTC_0de02.exe" /INCREMENTAL /ILK:"cmTC_0de02.dir\\Debug\\cmTC_0de02.ilk" /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-qb5sfg/Debug/cmTC_0de02.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-qb5sfg/Debug/cmTC_0de02.lib" /MACHINE:X64  /machine:x64 cmTC_0de02.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_0de02.vcxproj -> C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\cmTC_0de02.exe
-        AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\cmTC_0de02.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\cmTC_0de02.write.1u.tlog" "cmTC_0de02.dir\\Debug\\vcpkg.applocal.log"
-          'pwsh.exe' is not recognized as an internal or external command,
-          operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\cmTC_0de02.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\cmTC_0de02.write.1u.tlog" "cmTC_0de02.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\Mi\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\Debug\\cmTC_0de02.exe" "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\cmTC_0de02.write.1u.tlog" "cmTC_0de02.dir\\Debug\\vcpkg.applocal.log"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gez50f\\Debug\\cmTC_1a286.exe" /INCREMENTAL /ILK:"cmTC_1a286.dir\\Debug\\cmTC_1a286.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-gez50f/Debug/cmTC_1a286.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-gez50f/Debug/cmTC_1a286.lib" /MACHINE:X64  /machine:x64 cmTC_1a286.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_1a286.vcxproj -> C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gez50f\\Debug\\cmTC_1a286.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\unsuccessfulbuild".
-          Touching "cmTC_0de02.dir\\Debug\\cmTC_0de02.tlog\\cmTC_0de02.lastbuildstate".
-        Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qb5sfg\\cmTC_0de02.vcxproj" (default targets).
+          ╨д╨░╨╣╨╗ "cmTC_1a286.dir\\Debug\\cmTC_1a286.tlog\\unsuccessfulbuild" ╤Г╨┤╨░╨╗╤П╨╡╤В╤Б╤П.
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_1a286.dir\\Debug\\cmTC_1a286.tlog\\cmTC_1a286.lastbuildstate".
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gez50f\\cmTC_1a286.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         
-        Build succeeded.
-            0 Warning(s)
-            0 Error(s)
+        ╨б╨▒╨╛╤А╨║╨░ ╤Г╤Б╨┐╨╡╤И╨╜╨╛ ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░.
+            ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+            ╨Ю╤И╨╕╨▒╨╛╨║: 0
         
-        Time Elapsed 00:00:03.61
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.42
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "external/glfw/CMakeLists.txt:3 (project)"
     message: |
       Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
-        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
         implicit libs: []
         implicit objs: []
         implicit dirs: []
@@ -313,197 +277,188 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeDetermineCompilerABI.cmake:264 (cmake_determine_linker_id)"
-      - "D:/CMake/share/cmake-4.0/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "external/glfw/CMakeLists.txt:3 (project)"
     message: |
-      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.43.34809.0
+      Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35222.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
-      - "D:/CMake/share/cmake-4.0/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:97 (check_c_source_compiles)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
       - "external/glfw/CMakeLists.txt:48 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-74vtbl"
-      binary: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-74vtbl"
+      source: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-1m5jej"
+      binary: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-1m5jej"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-74vtbl'
+        Change Dir: 'C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-1m5jej'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5cd97.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 08/01/2026 12:26:19.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e3a75.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:38:00.
         
-        Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\cmTC_5cd97.vcxproj" on node 1 (default targets).
+        ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\cmTC_e3a75.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          Creating directory "cmTC_5cd97.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\Debug\\".
-          Creating directory "cmTC_5cd97.dir\\Debug\\cmTC_5cd97.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_e3a75.dir\\Debug\\".
+          ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_e3a75.dir\\Debug\\cmTC_e3a75.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_5cd97.dir\\Debug\\cmTC_5cd97.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_5cd97.dir\\Debug\\cmTC_5cd97.tlog\\unsuccessfulbuild".
-        VcpkgTripletSelection:
-          Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-          Using normalized configuration "Debug"
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_e3a75.dir\\Debug\\cmTC_e3a75.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_e3a75.dir\\Debug\\cmTC_e3a75.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5cd97.dir\\Debug\\\\" /Fd"cmTC_5cd97.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\src.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5cd97.dir\\Debug\\\\" /Fd"cmTC_5cd97.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e3a75.dir\\Debug\\\\" /Fd"cmTC_e3a75.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\src.c"
+          ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.44.35222 ╨┤╨╗╤П x64
+          (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e3a75.dir\\Debug\\\\" /Fd"cmTC_e3a75.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\src.c"
           src.c
-        C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\cmTC_5cd97.vcxproj]
-        Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\cmTC_5cd97.vcxproj" (default targets) -- FAILED.
+        C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\src.c(1,10): error C1083: ╨Э╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\cmTC_e3a75.vcxproj]
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\cmTC_e3a75.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) ╤Б ╨╛╤И╨╕╨▒╨║╨╛╨╣.
         
-        Build FAILED.
+        ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨▒╨╛╤А╨║╨╕.
         
-        "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\cmTC_5cd97.vcxproj" (default target) (1) ->
-        (ClCompile target) -> 
-          C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-74vtbl\\cmTC_5cd97.vcxproj]
+        "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\cmTC_e3a75.vcxproj" (╤Ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) (1) ->
+        (╨ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В ClCompile) -> 
+          C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\src.c(1,10): error C1083: ╨Э╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ ╨▓╨║╨╗╤О╤З╨╡╨╜╨╕╨╡: pthread.h: No such file or directory, [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1m5jej\\cmTC_e3a75.vcxproj]
         
-            0 Warning(s)
-            1 Error(s)
+            ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+            ╨Ю╤И╨╕╨▒╨╛╨║: 1
         
-        Time Elapsed 00:00:00.56
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.34
         
       exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:175 (_threads_check_lib)"
       - "external/glfw/CMakeLists.txt:48 (find_package)"
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-tagf33"
-      binary: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-tagf33"
+      source: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-pqfeq4"
+      binary: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-pqfeq4"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-tagf33'
+        Change Dir: 'C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-pqfeq4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_dc77e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 08/01/2026 12:26:20.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fffe3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:38:02.
         
-        Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\cmTC_dc77e.vcxproj" on node 1 (default targets).
+        ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\cmTC_fffe3.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          Creating directory "cmTC_dc77e.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\Debug\\".
-          Creating directory "cmTC_dc77e.dir\\Debug\\cmTC_dc77e.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_fffe3.dir\\Debug\\".
+          ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_fffe3.dir\\Debug\\cmTC_fffe3.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_dc77e.dir\\Debug\\cmTC_dc77e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_dc77e.dir\\Debug\\cmTC_dc77e.tlog\\unsuccessfulbuild".
-        VcpkgTripletSelection:
-          Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-          Using normalized configuration "Debug"
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_fffe3.dir\\Debug\\cmTC_fffe3.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_fffe3.dir\\Debug\\cmTC_fffe3.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dc77e.dir\\Debug\\\\" /Fd"cmTC_dc77e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\CheckFunctionExists.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dc77e.dir\\Debug\\\\" /Fd"cmTC_dc77e.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fffe3.dir\\Debug\\\\" /Fd"cmTC_fffe3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\CheckFunctionExists.c"
+          ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.44.35222 ╨┤╨╗╤П x64
+          (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fffe3.dir\\Debug\\\\" /Fd"cmTC_fffe3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\Debug\\cmTC_dc77e.exe" /INCREMENTAL /ILK:"cmTC_dc77e.dir\\Debug\\cmTC_dc77e.ilk" /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-tagf33/Debug/cmTC_dc77e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-tagf33/Debug/cmTC_dc77e.lib" /MACHINE:X64  /machine:x64 cmTC_dc77e.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\cmTC_dc77e.vcxproj]
-        Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\cmTC_dc77e.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\Debug\\cmTC_fffe3.exe" /INCREMENTAL /ILK:"cmTC_fffe3.dir\\Debug\\cmTC_fffe3.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-pqfeq4/Debug/cmTC_fffe3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-pqfeq4/Debug/cmTC_fffe3.lib" /MACHINE:X64  /machine:x64 cmTC_fffe3.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: ╨╜╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\cmTC_fffe3.vcxproj]
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\cmTC_fffe3.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) ╤Б ╨╛╤И╨╕╨▒╨║╨╛╨╣.
         
-        Build FAILED.
+        ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨▒╨╛╤А╨║╨╕.
         
-        "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\cmTC_dc77e.vcxproj" (default target) (1) ->
-        (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tagf33\\cmTC_dc77e.vcxproj]
+        "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\cmTC_fffe3.vcxproj" (╤Ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) (1) ->
+        (╨ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В Link) -> 
+          LINK : fatal error LNK1104: ╨╜╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ "pthreads.lib" [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pqfeq4\\cmTC_fffe3.vcxproj]
         
-            0 Warning(s)
-            1 Error(s)
+            ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+            ╨Ю╤И╨╕╨▒╨╛╨║: 1
         
-        Time Elapsed 00:00:00.84
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.20
         
       exitCode: 1
   -
     kind: "try_compile-v1"
     backtrace:
-      - "D:/CMake/share/cmake-4.0/Modules/CheckLibraryExists.cmake:112 (try_compile)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:112 (check_library_exists)"
-      - "D:/CMake/share/cmake-4.0/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake:176 (_threads_check_lib)"
       - "external/glfw/CMakeLists.txt:48 (find_package)"
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-xyo6bl"
-      binary: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-xyo6bl"
+      source: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-8ty7fb"
+      binary: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-8ty7fb"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
+      CMAKE_MODULE_PATH: "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/CMake/modules"
     buildResult:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-xyo6bl'
+        Change Dir: 'C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-8ty7fb'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e6bfb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        MSBuild version 17.13.19+0d9f5a35a for .NET Framework
-        Build started 08/01/2026 12:26:21.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_66868.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        ╨Т╨╡╤А╤Б╨╕╤П MSBuild 17.14.23+b0019275e ╨┤╨╗╤П .NET Framework
+        ╨б╨▒╨╛╤А╨║╨░ ╨╜╨░╤З╨░╤В╨░ 09.01.2026 17:38:04.
         
-        Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\cmTC_e6bfb.vcxproj" on node 1 (default targets).
+        ╨Я╤А╨╛╨╡╨║╤В "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\cmTC_66868.vcxproj" ╨▓ ╤Г╨╖╨╗╨╡ 1 (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О).
         PrepareForBuild:
-          Creating directory "cmTC_e6bfb.dir\\Debug\\".
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\Debug\\".
-          Creating directory "cmTC_e6bfb.dir\\Debug\\cmTC_e6bfb.tlog\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_66868.dir\\Debug\\".
+          ╨б╤В╤А╤Г╨║╤В╤Г╤А╨╕╤А╨╛╨▓╨░╨╜╨╜╤Л╨╣ ╨▓╤Л╨▓╨╛╨┤ ╨▓╨║╨╗╤О╤З╨╡╨╜. ╨д╨╛╤А╨╝╨░╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╨╡ ╨┤╨╕╨░╨│╨╜╨╛╤Б╤В╨╕╨║╨╕ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А╨░ ╨▒╤Г╨┤╨╡╤В ╨╛╤В╤А╨░╨╢╨░╤В╤М ╨╕╨╡╤А╨░╤А╤Е╨╕╤О ╨╛╤И╨╕╨▒╨╛╨║. ╨Я╨╛╨┤╤А╨╛╨▒╨╜╨╡╨╡ ╤Б╨╝. https://aka.ms/cpp/structured-output.
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\Debug\\".
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ ╨║╨░╤В╨░╨╗╨╛╨│╨░ "cmTC_66868.dir\\Debug\\cmTC_66868.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_e6bfb.dir\\Debug\\cmTC_e6bfb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_e6bfb.dir\\Debug\\cmTC_e6bfb.tlog\\unsuccessfulbuild".
-        VcpkgTripletSelection:
-          Using triplet "x64-windows" from "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\"
-          Using normalized configuration "Debug"
+          ╨б╨╛╨╖╨┤╨░╨╜╨╕╨╡ "cmTC_66868.dir\\Debug\\cmTC_66868.tlog\\unsuccessfulbuild", ╤В╨░╨║ ╨║╨░╨║ ╨▒╤Л╨╗╨╛ ╨╖╨░╨┤╨░╨╜╨╛ "AlwaysCreate".
+          ╨Ю╨▒╤А╨░╤Й╨╡╨╜╨╕╨╡ ╨║ "cmTC_66868.dir\\Debug\\cmTC_66868.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e6bfb.dir\\Debug\\\\" /Fd"cmTC_e6bfb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\CheckFunctionExists.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e6bfb.dir\\Debug\\\\" /Fd"cmTC_e6bfb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_66868.dir\\Debug\\\\" /Fd"cmTC_66868.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\CheckFunctionExists.c"
+          ╨Ю╨┐╤В╨╕╨╝╨╕╨╖╨╕╤А╤Г╤О╤Й╨╕╨╣ ╨║╨╛╨╝╨┐╨╕╨╗╤П╤В╨╛╤А Microsoft (R) C/C++ ╨▓╨╡╤А╤Б╨╕╨╕ 19.44.35222 ╨┤╨╗╤П x64
+          (C) ╨Ъ╨╛╤А╨┐╨╛╤А╨░╤Ж╨╕╤П ╨Ь╨░╨╣╨║╤А╨╛╤Б╨╛╤Д╤В (Microsoft Corporation).  ╨Т╤Б╨╡ ╨┐╤А╨░╨▓╨░ ╨╖╨░╤Й╨╕╤Й╨╡╨╜╤Л.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_66868.dir\\Debug\\\\" /Fd"cmTC_66868.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\Debug\\cmTC_e6bfb.exe" /INCREMENTAL /ILK:"cmTC_e6bfb.dir\\Debug\\cmTC_e6bfb.ilk" /NOLOGO /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\Mi\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-xyo6bl/Debug/cmTC_e6bfb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-xyo6bl/Debug/cmTC_e6bfb.lib" /MACHINE:X64  /machine:x64 cmTC_e6bfb.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\cmTC_e6bfb.vcxproj]
-        Done Building Project "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\cmTC_e6bfb.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\Debug\\cmTC_66868.exe" /INCREMENTAL /ILK:"cmTC_66868.dir\\Debug\\cmTC_66868.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-8ty7fb/Debug/cmTC_66868.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/CMakeFiles/CMakeScratch/TryCompile-8ty7fb/Debug/cmTC_66868.lib" /MACHINE:X64  /machine:x64 cmTC_66868.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: ╨╜╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ "pthread.lib" [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\cmTC_66868.vcxproj]
+        ╨б╨▒╨╛╤А╨║╨░ ╨┐╤А╨╛╨╡╨║╤В╨░ "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\cmTC_66868.vcxproj" ╨╖╨░╨▓╨╡╤А╤И╨╡╨╜╨░ (╤Ж╨╡╨╗╨╡╨▓╤Л╨╡ ╨╛╨▒╤К╨╡╨║╤В╤Л ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) ╤Б ╨╛╤И╨╕╨▒╨║╨╛╨╣.
         
-        Build FAILED.
+        ╨Ю╤И╨╕╨▒╨║╨░ ╤Б╨▒╨╛╤А╨║╨╕.
         
-        "C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\cmTC_e6bfb.vcxproj" (default target) (1) ->
-        (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Mi\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xyo6bl\\cmTC_e6bfb.vcxproj]
+        "C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\cmTC_66868.vcxproj" (╤Ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О) (1) ->
+        (╨ж╨╡╨╗╨╡╨▓╨╛╨╣ ╨╛╨▒╤К╨╡╨║╤В Link) -> 
+          LINK : fatal error LNK1104: ╨╜╨╡ ╤Г╨┤╨░╨╡╤В╤Б╤П ╨╛╤В╨║╤А╤Л╤В╤М ╤Д╨░╨╣╨╗ "pthread.lib" [C:\\Users\\kiral\\source\\repos\\KirillSilesia\\Swarm-Intelligence-Simulation-Framework\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8ty7fb\\cmTC_66868.vcxproj]
         
-            0 Warning(s)
-            1 Error(s)
+            ╨Я╤А╨╡╨┤╤Г╨┐╤А╨╡╨╢╨┤╨╡╨╜╨╕╨╣: 0
+            ╨Ю╤И╨╕╨▒╨╛╨║: 1
         
-        Time Elapsed 00:00:01.21
+        ╨Я╤А╨╛╤И╨╗╨╛ ╨▓╤А╨╡╨╝╨╡╨╜╨╕ 00:00:01.27
         
       exitCode: 1
 ...

@@ -18,7 +18,8 @@ enum class ObstacleShape {
 };
 
 struct Obstacle {
-    Vec2 position;
+    float relativeX;
+    float relativeY;
     Vec2 velocity;
     float size;
     ObstacleShape shape;
@@ -39,17 +40,11 @@ private:
     int m_width;
     int m_height;
     bool m_finished;
-
-    Vec2 m_corridorTopLeft;
-    Vec2 m_corridorBottomRight;
     float m_corridorWidth;
     float m_corridorHeight;
-    float m_entranceY;
-    float m_exitY;
     float m_gapSize;
-
     std::vector<Obstacle> m_obstacles;
 
     void generateObstacles();
-    bool isInsideCorridor(const Vec2& pos) const;
+    bool isInsideCorridor(const Vec2& pos, const Vec2& topLeft, const Vec2& bottomRight) const;
 };

@@ -22,9 +22,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B301652A-E8B5-32BC-8878-0F5C85C60B3E}</ProjectGuid>
+    <ProjectGuid>{663899AE-5CF2-3BFF-BFDD-329FC90AD429}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
     <ProjectName>glfw</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">glfw3</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -98,10 +98,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_GLFW_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>
@@ -135,10 +135,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -151,7 +151,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>
@@ -172,10 +172,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -188,7 +188,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -208,10 +208,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_GLFW_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src;C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -223,11 +223,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -235,12 +235,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -248,12 +248,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -261,12 +261,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/external/glfw/src/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-file C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/external/glfw/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -274,49 +274,49 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\CMake\glfw3.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\external\glfw\src\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include\GLFW\glfw3.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include\GLFW\glfw3native.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\internal.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\platform.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\mappings.h" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\context.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\init.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\input.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\monitor.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\platform.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\vulkan.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\window.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\egl_context.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\osmesa_context.c" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_platform.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_joystick.h" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_init.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_monitor.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_window.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_joystick.c" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_time.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_thread.h" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_module.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_time.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_thread.c" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_platform.h" />
-    <ClInclude Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_joystick.h" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_init.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_joystick.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_monitor.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_window.c" />
-    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\wgl_context.c" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include\GLFW\glfw3.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\include\GLFW\glfw3native.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\internal.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\platform.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\mappings.h" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\context.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\init.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\input.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\monitor.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\platform.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\vulkan.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\window.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\egl_context.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\osmesa_context.c" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_platform.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_joystick.h" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_init.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_monitor.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_window.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\null_joystick.c" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_time.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_thread.h" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_module.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_time.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_thread.c" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_platform.h" />
+    <ClInclude Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_joystick.h" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_init.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_joystick.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_monitor.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\win32_window.c" />
+    <ClCompile Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\glfw\src\wgl_context.c" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\ZERO_CHECK.vcxproj">
-      <Project>{F6838170-E72F-3D94-A977-E3587BEB6B3A}</Project>
+    <ProjectReference Include="C:\Users\kiral\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\build\ZERO_CHECK.vcxproj">
+      <Project>{ED51C47C-6D1D-3D6F-B905-B78D37DCB2B7}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
