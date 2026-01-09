@@ -1,73 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\algorithms\AntColonyOptimization.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\algorithms\AntColonyOptimization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\algorithms\ArtificialBeeColony.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\algorithms\ArtificialBeeColony.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\algorithms\ParticleSwarmOptimization.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\algorithms\FishSchoolSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\core\Agent.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\algorithms\ParticleSwarmOptimization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\core\Simulation.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\core\Agent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\gui\GUI.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\core\Simulation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\main.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\gui\GUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\scenarios\ExplorationScenario.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\scenarios\MazeScenario.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\ObstacleAvoidance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\src\scenarios\TargetSearchScenario.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\PathPlanning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\imgui.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\imgui_draw.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\TargetSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\imgui_tables.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\imgui_widgets.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\imgui_demo.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\backends\imgui_impl_glfw.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\imgui\backends\imgui_impl_opengl3.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\implot\implot.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\backends\imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\implot\implot_items.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\imgui\backends\imgui_impl_opengl3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\kiral\source\repos\Swarm Intelligence\external\implot\implot_demo.cpp">
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\implot\implot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\implot\implot_items.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\external\implot\implot_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\kiral\source\repos\Swarm Intelligence\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{905AE80C-7CB4-3920-9C48-01AB49528858}</UniqueIdentifier>
+      <UniqueIdentifier>{7495F2D1-D6ED-3E9D-B075-EF2E22EE22BB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

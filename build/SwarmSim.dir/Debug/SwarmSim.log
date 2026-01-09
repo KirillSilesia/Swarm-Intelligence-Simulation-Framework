@@ -1,14 +1,33 @@
-﻿  Building Custom Rule C:/Users/kiral/source/repos/Swarm Intelligence/CMakeLists.txt
+﻿  Building Custom Rule C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/CMakeLists.txt
   AntColonyOptimization.cpp
   ArtificialBeeColony.cpp
+  FishSchoolSearch.cpp
   ParticleSwarmOptimization.cpp
   Agent.cpp
   Simulation.cpp
   GUI.cpp
   main.cpp
-  ExplorationScenario.cpp
-  MazeScenario.cpp
-  TargetSearchScenario.cpp
+  ObstacleAvoidance.cpp
+  PathPlanning.cpp
+  Reconnaissance.cpp
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(4,17): error C2511: 'Reconnaissance::Reconnaissance(ImVec2,ImVec2)': overloaded member function not found in 'Reconnaissance'
+      C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.h(16,7):
+      see declaration of 'Reconnaissance'
+  
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(6,1): error C2550: 'Reconnaissance::{ctor}': constructor initializer lists are only allowed on constructor definitions
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(7,5): error C2352: 'Reconnaissance::reset': a call of a non-static member function requires an object
+      C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.h(21,10):
+      see declaration of 'Reconnaissance::reset'
+  
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(41,29): error C2065: 'm_corridorTopLeft': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(41,48): error C2065: 'm_corridorBottomRight': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(50,13): error C2065: 'm_corridorTopLeft': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(50,48): error C2065: 'm_corridorBottomRight': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(50,74): error C2065: 'm_corridorTopLeft': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(51,13): error C2065: 'm_corridorTopLeft': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(51,48): error C2065: 'm_corridorBottomRight': undeclared identifier
+C:\Users\Mi\source\repos\KirillSilesia\Swarm-Intelligence-Simulation-Framework\src\scenarios\Reconnaissance.cpp(51,74): error C2065: 'm_corridorTopLeft': undeclared identifier
+  TargetSearch.cpp
   imgui.cpp
   imgui_draw.cpp
   imgui_tables.cpp
@@ -17,7 +36,8 @@
   imgui_impl_glfw.cpp
   imgui_impl_opengl3.cpp
   implot.cpp
+  Generating Code...
+  Compiling...
   implot_items.cpp
   implot_demo.cpp
-  Создание кода...
-  SwarmSim.vcxproj -> C:\Users\kiral\source\repos\Swarm Intelligence\build\Debug\SwarmSim.exe
+  Generating Code...

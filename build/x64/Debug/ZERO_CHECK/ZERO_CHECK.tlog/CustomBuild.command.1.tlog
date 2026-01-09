@@ -1,6 +1,6 @@
-^C:\USERS\KIRAL\SOURCE\REPOS\SWARM INTELLIGENCE\BUILD\CMAKEFILES\106C8B9D55A1CC4E7AD045CE2A4FEF85\GENERATE.STAMP.RULE
+^C:\USERS\MI\SOURCE\REPOS\KIRILLSILESIA\SWARM-INTELLIGENCE-SIMULATION-FRAMEWORK\BUILD\CMAKEFILES\0DFD9ACAE5C311872A6636E4F5ED425E\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/kiral/source/repos/Swarm Intelligence" "-BC:/Users/kiral/source/repos/Swarm Intelligence/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/kiral/source/repos/Swarm Intelligence/build/SwarmSim.sln"
+D:\CMake\bin\cmake.exe -SC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework -BC:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Mi/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/build/SwarmSim.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
