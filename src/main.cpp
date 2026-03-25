@@ -58,7 +58,7 @@ void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoic
     const char* algos[] = { "ACO", "PSO", "ABC", "FSS" };
     ImGui::Combo("Algorithm", &algoChoice, algos, IM_ARRAYSIZE(algos));
 
-    const char* scenes[] = { "Path Planning", "Reconnaissance", "Target Search", "Obstacle Avoidance" };
+    const char* scenes[] = { "Path Planning", "Reconnaissance", "Obstacle Avoidance" };
     ImGui::Combo("Scenario", &scenChoice, scenes, IM_ARRAYSIZE(scenes));
 
     if (ImGui::Button("Run Simulation")) {
@@ -76,8 +76,7 @@ void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoic
         switch (scenChoice) {
         case 0: scenario = std::make_shared<PathPlanning>(20, 20); break;
         case 1: scenario = std::make_shared<Reconnaissance>(ImVec2(400.0f, 400.0f));  break;
-        case 2: scenario = std::make_shared<TargetSearch>(); break;
-		case 3: scenario = std::make_shared<ObstacleAvoidance>(800, 600); break;
+		case 2: scenario = std::make_shared<ObstacleAvoidance>(800, 600); break;
         }
 
         // Launch simulation
@@ -130,7 +129,7 @@ int main() {
             sim.update(0.016f); // dt ~16ms
         };
         if (currentScenario) {
-            currentScenario->draw();
+            currentScenario->draw(sim.getAgents());
         };
 
         ImGui::Render();

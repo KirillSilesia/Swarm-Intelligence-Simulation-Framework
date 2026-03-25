@@ -1,5 +1,6 @@
 #pragma once
 #include "Scenario.h"
+#include "Agent.h"
 #include <vector>
 
 class PathPlanning : public Scenario {
@@ -7,10 +8,10 @@ public:
     PathPlanning(int width, int height);
 
     const char* getName() const override;
-    void reset() override;
-    void update(float deltaTime) override;
+    void reset(std::vector<Agent>& agents) override;
+    void update(float deltaTime, std::vector<Agent>& agents) override;
     bool isFinished() const override;
-    void draw() override;
+    void draw(const std::vector<Agent>& agents) override;
 
 private:
     struct Cell {

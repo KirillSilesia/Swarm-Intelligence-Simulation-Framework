@@ -14,6 +14,7 @@ public:
     void update(float deltaTime);
     bool isFinished() const;
     bool isRunning() const { return m_scenario != nullptr && m_algorithm != nullptr; }
+    const std::vector<Agent>& getAgents() const { return m_agents; }
 
 private:
     std::vector<Agent> m_agents;

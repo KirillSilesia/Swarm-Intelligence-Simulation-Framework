@@ -1,4 +1,5 @@
 #include "Simulation.h"
+#include  "Agent.h"
 
 void Simulation::start(
     std::shared_ptr<SwarmAlgorithm> algorithm,
@@ -10,13 +11,13 @@ void Simulation::start(
     m_agents.resize(agentCount);
 
     m_algorithm->initialize(m_agents, *m_scenario);
-    m_scenario->reset();
+    m_scenario->reset(m_agents);
 }
 
 void Simulation::update(float deltaTime) {
     if (!isFinished()) {
         m_algorithm->update(m_agents, *m_scenario, deltaTime);
-        m_scenario->update(deltaTime);
+        m_scenario->update(deltaTime, m_agents);
     }
 }
 

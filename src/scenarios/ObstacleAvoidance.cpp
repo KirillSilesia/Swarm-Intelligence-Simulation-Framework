@@ -4,15 +4,15 @@
 #include <cstdlib>
 
 ObstacleAvoidance::ObstacleAvoidance(int width, int height)
-    : m_width(width), m_height(height), m_finished(false) {
-    reset();
+    : m_width(width), m_height(height), m_finished(false)
+{
 }
 
 const char* ObstacleAvoidance::getName() const {
     return "Obstacle Avoidance";
 }
 
-void ObstacleAvoidance::reset() {
+void ObstacleAvoidance::reset(std::vector<Agent>& agents) {
     m_finished = false;
     m_obstacles.clear();
 
@@ -79,7 +79,7 @@ bool ObstacleAvoidance::isInsideCorridor(const Vec2& pos, const Vec2& topLeft, c
     return true;
 }
 
-void ObstacleAvoidance::update(float deltaTime) {
+void ObstacleAvoidance::update(float deltaTime, std::vector<Agent>& agents) {
     ImGuiIO& io = ImGui::GetIO();
     float windowHeight = io.DisplaySize.y;
     float guiHeight = windowHeight / 3.0f;
@@ -125,7 +125,7 @@ bool ObstacleAvoidance::isFinished() const {
     return m_finished;
 }
 
-void ObstacleAvoidance::draw() {
+void ObstacleAvoidance::draw(const std::vector<Agent>& agents) {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
     ImGuiIO& io = ImGui::GetIO();
     float windowHeight = io.DisplaySize.y;

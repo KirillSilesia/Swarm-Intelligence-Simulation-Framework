@@ -2,11 +2,13 @@
 #include "Scenario.h"
 #include "imgui.h"
 #include <vector>
+#include "Agent.h"
 
 struct ReconObject {
     ImVec2 pos;
     float radius;
     int priority;
+    bool found = false;
 };
 
 class Reconnaissance : public Scenario {
@@ -14,10 +16,10 @@ public:
     Reconnaissance(ImVec2 fieldSize);
 
     const char* getName() const override;
-    void reset() override;
-    void update(float deltaTime) override;
+    void reset(std::vector<Agent>& agents) override;
+    void update(float deltaTime, std::vector<Agent>& agents) override;
     bool isFinished() const override;
-    void draw() override;
+    void draw(const std::vector<Agent>&agents) override;
 
 private:
     ImVec2 m_fieldSize;

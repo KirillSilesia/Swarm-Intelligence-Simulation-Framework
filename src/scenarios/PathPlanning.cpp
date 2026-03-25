@@ -4,8 +4,8 @@
 #include <cstdlib>
 
 PathPlanning::PathPlanning(int width, int height)
-    : m_width(width), m_height(height), m_finished(false) {
-    reset();
+    : m_width(width), m_height(height), m_finished(false)
+{
 }
 
 const char* PathPlanning::getName() const {
@@ -16,7 +16,7 @@ int PathPlanning::index(int x, int y) const {
     return x + y * m_width;
 }
 
-void PathPlanning::reset() {
+void PathPlanning::reset(std::vector<Agent>& agents) {
     m_finished = false;
     m_cells.clear();
     m_cells.resize(m_width * m_height);
@@ -78,7 +78,7 @@ void PathPlanning::generateMaze() {
     }
 }
 
-void PathPlanning::update(float) {
+void PathPlanning::update(float /*dt*/, std::vector<Agent>& agents) {
     // Maze itself is static
 }
 
@@ -86,7 +86,7 @@ bool PathPlanning::isFinished() const {
     return m_finished;
 }
 
-void PathPlanning::draw() {
+void PathPlanning::draw(const std::vector<Agent>& agents) {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
 
 	ImGuiIO& io = ImGui::GetIO();
