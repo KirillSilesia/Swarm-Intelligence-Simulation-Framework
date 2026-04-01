@@ -22,7 +22,9 @@
 #include "scenarios/Reconnaissance.h"
 #include "scenarios/PathPlanning.h"
 #include "scenarios/ObstacleAvoidance.h"
+
 std::shared_ptr<Scenario> currentScenario = nullptr;
+float dtMultiplier = 1.0f;
 
 // ==================== GUI ====================
 void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoice) {
@@ -60,6 +62,8 @@ void renderGUI(Simulation& sim, int& agentCount, int& algoChoice, int& scenChoic
 
     const char* scenes[] = { "Path Planning", "Reconnaissance", "Obstacle Avoidance" };
     ImGui::Combo("Scenario", &scenChoice, scenes, IM_ARRAYSIZE(scenes));
+
+	ImGui::SliderFloat("Simulation Speed", &dtMultiplier, 0.1f, 10.0f, "%.1fx");
 
     if (ImGui::Button("Run Simulation")) {
         // Choose algorithm
@@ -126,7 +130,7 @@ int main() {
 
         // Updating simulation
         if (sim.isRunning()) {
-            sim.update(0.016f); // dt ~16ms
+            sim.update(0.016f * dtMultiplier);
         };
         if (currentScenario) {
             currentScenario->draw(sim.getAgents());

@@ -21,6 +21,13 @@ void ObstacleAvoidance::reset(std::vector<Agent>& agents) {
     m_gapSize = 60.0f;
 
     generateObstacles();
+
+    for (auto& a : agents) {
+        a.x = 0.0f;
+        a.y = 0.5f;
+        a.vx = 0.0f;
+        a.vy = 0.0f;
+    }
 }
 
 void ObstacleAvoidance::generateObstacles() {
@@ -252,4 +259,12 @@ void ObstacleAvoidance::draw(const std::vector<Agent>& agents) {
         ImVec2(corridorTopLeft.x + markerSize / 2, exitY + markerSize / 2),
         exitColor
     );
+
+    for (const auto& a : agents) {
+        ImVec2 p(
+            corridorTopLeft.x + a.x * m_corridorWidth,
+            corridorTopLeft.y + a.y * m_corridorHeight
+        );
+        drawList->AddCircleFilled(p, 3.0f, IM_COL32(0, 200, 255, 255));
+    }
 }

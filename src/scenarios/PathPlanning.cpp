@@ -25,6 +25,13 @@ void PathPlanning::reset(std::vector<Agent>& agents) {
 
     m_cells[index(0, 0)].walls[3] = false;
     m_cells[index(m_width - 1, m_height - 1)].walls[1] = false;
+
+    for (auto& a : agents) {
+        a.x = 0.0f;
+        a.y = 0.0f;
+        a.vx = 0.0f;
+        a.vy = 0.0f;
+    }
 }
 
 void PathPlanning::generateMaze() {
@@ -124,4 +131,13 @@ void PathPlanning::draw(const std::vector<Agent>& agents) {
     ImVec2 endTL = ImVec2(origin.x + (m_width - 1) * cellSize, origin.y + (m_height - 1) * cellSize);
     ImVec2 endBR = ImVec2(endTL.x + cellSize, endTL.y + cellSize);
     drawList->AddRectFilled(endTL, endBR, IM_COL32(255, 0, 0, 255));
+
+    float mazeWidth = m_width * cellSize;
+    for (const auto& a : agents) {
+        ImVec2 p(
+            origin.x + a.x * mazeWidth,
+            origin.y + a.y * mazeHeight  // mazeHeight already declared above
+        );
+        drawList->AddCircleFilled(p, 3.0f, IM_COL32(0, 200, 255, 255));
+    }
 }

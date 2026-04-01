@@ -10,8 +10,8 @@ void Simulation::start(
     m_scenario = scenario;
     m_agents.resize(agentCount);
 
-    m_algorithm->initialize(m_agents, *m_scenario);
     m_scenario->reset(m_agents);
+    m_algorithm->initialize(m_agents, *m_scenario);
 }
 
 void Simulation::update(float deltaTime) {

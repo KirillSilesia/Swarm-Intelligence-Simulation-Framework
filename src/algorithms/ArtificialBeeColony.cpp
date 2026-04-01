@@ -1,5 +1,6 @@
 #include "ArtificialBeeColony.h"
 #include <cstdlib>
+#include <algorithm>
 
 const char* ArtificialBeeColony::getName() const {
     return "Artificial Bee Colony";
@@ -7,14 +8,15 @@ const char* ArtificialBeeColony::getName() const {
 
 void ArtificialBeeColony::initialize(std::vector<Agent>& agents, Scenario&) {
     for (auto& a : agents) {
-        a.x = rand() % 100;
-        a.y = rand() % 100;
+        a.vx = 0.0f;
+        a.vy = 0.0f;
     }
 }
-
 void ArtificialBeeColony::update(std::vector<Agent>& agents, Scenario&, float dt) {
     for (auto& a : agents) {
-        a.x += (rand() % 3 - 1) * dt * 40;
-        a.y += (rand() % 3 - 1) * dt * 40;
+        a.vx = (rand() % 200 - 100) / 100.0f * 0.1f;
+        a.vy = (rand() % 200 - 100) / 100.0f * 0.1f;
+        a.x = std::clamp(a.x + a.vx * dt, 0.0f, 1.0f);
+        a.y = std::clamp(a.y + a.vy * dt, 0.0f, 1.0f);
     }
 }
