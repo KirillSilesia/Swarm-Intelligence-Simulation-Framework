@@ -7,11 +7,15 @@ class PathPlanning : public Scenario {
 public:
     PathPlanning(int width, int height);
 
+    bool isMoveValid(float x1, float y1, float x2, float y2) const;
+    bool canMove(int x, int y, int dir) const;
     const char* getName() const override;
     void reset(std::vector<Agent>& agents) override;
     void update(float deltaTime, std::vector<Agent>& agents) override;
     bool isFinished() const override;
-    void draw(const std::vector<Agent>& agents) override;
+    int getWidth() const { return m_width; }
+    int getHeight() const { return m_height; }
+    void draw(const std::vector<Agent>& agents, float xOffset, float widthScale) override;
 
 private:
     struct Cell {

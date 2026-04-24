@@ -132,139 +132,77 @@ bool ObstacleAvoidance::isFinished() const {
     return m_finished;
 }
 
-void ObstacleAvoidance::draw(const std::vector<Agent>& agents) {
+void ObstacleAvoidance::draw(const std::vector<Agent>& agents, float xOffset, float widthScale) {
     ImDrawList* drawList = ImGui::GetBackgroundDrawList();
     ImGuiIO& io = ImGui::GetIO();
     float windowHeight = io.DisplaySize.y;
     float guiHeight = windowHeight / 3.0f;
     float availableHeight = windowHeight - guiHeight;
 
-    float yOffset = guiHeight + (availableHeight - m_corridorHeight) / 2.0f;
-    Vec2 corridorTopLeft(20.0f, yOffset);
-    Vec2 corridorBottomRight(corridorTopLeft.x + m_corridorWidth, corridorTopLeft.y + m_corridorHeight);
+    float corridorW = m_corridorWidth * widthScale;
+    float corridorH = m_corridorHeight;
+    float yOffset = guiHeight + (availableHeight - corridorH) / 2.0f;
 
-    float entranceY = corridorTopLeft.y + m_corridorHeight / 2.0f;
+    Vec2 corridorTopLeft(xOffset + 20.0f, yOffset);
+    Vec2 corridorBottomRight(corridorTopLeft.x + corridorW, corridorTopLeft.y + corridorH);
+    float entranceY = corridorTopLeft.y + corridorH / 2.0f;
     float exitY = entranceY;
 
     drawList->PushClipRect(
         ImVec2(corridorTopLeft.x, corridorTopLeft.y),
-        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
-        true
-    );
+        ImVec2(corridorBottomRight.x, corridorBottomRight.y), true);
 
     for (const auto& obs : m_obstacles) {
         ImU32 obstacleColor = IM_COL32(255, 165, 0, 255);
-
-        ImVec2 pos(
-            corridorTopLeft.x + obs.relativeX * m_corridorWidth,
-            corridorTopLeft.y + obs.relativeY * m_corridorHeight
-        );
+        ImVec2 pos(corridorTopLeft.x + obs.relativeX * corridorW,
+            corridorTopLeft.y + obs.relativeY * corridorH);
 
         switch (obs.shape) {
         case ObstacleShape::Circle:
             drawList->AddCircleFilled(pos, obs.size, obstacleColor);
             drawList->AddCircle(pos, obs.size, IM_COL32(255, 255, 255, 255), 0, 2.0f);
             break;
-
         case ObstacleShape::Rectangle: {
             float halfSize = obs.size;
-            ImVec2 corners[4];
-            float c = std::cos(obs.rotation);
-            float s = std::sin(obs.rotation);
-
-            corners[0] = ImVec2(pos.x + (-halfSize * c - -halfSize * s),
-                pos.y + (-halfSize * s + -halfSize * c));
-            corners[1] = ImVec2(pos.x + (halfSize * c - -halfSize * s),
-                pos.y + (halfSize * s + -halfSize * c));
-            corners[2] = ImVec2(pos.x + (halfSize * c - halfSize * s),
-                pos.y + (halfSize * s + halfSize * c));
-            corners[3] = ImVec2(pos.x + (-halfSize * c - halfSize * s),
-                pos.y + (-halfSize * s + halfSize * c));
-
+            float c = std::cos(obs.rotation), s = std::sin(obs.rotation);
+            ImVec2 corners[4] = {
+                ImVec2(pos.x + (-halfSize * c - -halfSize * s), pos.y + (-halfSize * s + -halfSize * c)),
+                ImVec2(pos.x + (halfSize * c - -halfSize * s), pos.y + (halfSize * s + -halfSize * c)),
+                ImVec2(pos.x + (halfSize * c - halfSize * s), pos.y + (halfSize * s + halfSize * c)),
+                ImVec2(pos.x + (-halfSize * c - halfSize * s), pos.y + (-halfSize * s + halfSize * c))
+            };
             drawList->AddQuadFilled(corners[0], corners[1], corners[2], corners[3], obstacleColor);
-            drawList->AddQuad(corners[0], corners[1], corners[2], corners[3],
-                IM_COL32(255, 255, 255, 255), 2.0f);
+            drawList->AddQuad(corners[0], corners[1], corners[2], corners[3], IM_COL32(255, 255, 255, 255), 2.0f);
             break;
         }
-
         case ObstacleShape::Triangle: {
-            float c = std::cos(obs.rotation);
-            float s = std::sin(obs.rotation);
             float r = obs.size;
-
-            ImVec2 p1(pos.x + r * c, pos.y + r * s);
-            ImVec2 p2(pos.x + r * std::cos(obs.rotation + 2.0944f),
-                pos.y + r * std::sin(obs.rotation + 2.0944f));
-            ImVec2 p3(pos.x + r * std::cos(obs.rotation - 2.0944f),
-                pos.y + r * std::sin(obs.rotation - 2.0944f));
-
+            ImVec2 p1(pos.x + r * std::cos(obs.rotation), pos.y + r * std::sin(obs.rotation));
+            ImVec2 p2(pos.x + r * std::cos(obs.rotation + 2.0944f), pos.y + r * std::sin(obs.rotation + 2.0944f));
+            ImVec2 p3(pos.x + r * std::cos(obs.rotation - 2.0944f), pos.y + r * std::sin(obs.rotation - 2.0944f));
             drawList->AddTriangleFilled(p1, p2, p3, obstacleColor);
             drawList->AddTriangle(p1, p2, p3, IM_COL32(255, 255, 255, 255), 2.0f);
             break;
         }
         }
     }
-
     drawList->PopClipRect();
 
     ImU32 wallColor = IM_COL32(150, 150, 150, 255);
-    float wallThickness = 3.0f;
+    float wt = 3.0f;
+    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorTopLeft.y), ImVec2(corridorBottomRight.x, corridorTopLeft.y), wallColor, wt);
+    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorBottomRight.y), ImVec2(corridorBottomRight.x, corridorBottomRight.y), wallColor, wt);
+    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorTopLeft.y), ImVec2(corridorTopLeft.x, exitY - m_gapSize / 2), wallColor, wt);
+    drawList->AddLine(ImVec2(corridorTopLeft.x, exitY + m_gapSize / 2), ImVec2(corridorTopLeft.x, corridorBottomRight.y), wallColor, wt);
+    drawList->AddLine(ImVec2(corridorBottomRight.x, corridorTopLeft.y), ImVec2(corridorBottomRight.x, entranceY - m_gapSize / 2), wallColor, wt);
+    drawList->AddLine(ImVec2(corridorBottomRight.x, entranceY + m_gapSize / 2), ImVec2(corridorBottomRight.x, corridorBottomRight.y), wallColor, wt);
 
-    drawList->AddLine(
-        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
-        ImVec2(corridorBottomRight.x, corridorTopLeft.y),
-        wallColor, wallThickness
-    );
-
-    drawList->AddLine(
-        ImVec2(corridorTopLeft.x, corridorBottomRight.y),
-        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
-        wallColor, wallThickness
-    );
-
-    drawList->AddLine(
-        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
-        ImVec2(corridorTopLeft.x, exitY - m_gapSize / 2.0f),
-        wallColor, wallThickness
-    );
-    drawList->AddLine(
-        ImVec2(corridorTopLeft.x, exitY + m_gapSize / 2.0f),
-        ImVec2(corridorTopLeft.x, corridorBottomRight.y),
-        wallColor, wallThickness
-    );
-
-    drawList->AddLine(
-        ImVec2(corridorBottomRight.x, corridorTopLeft.y),
-        ImVec2(corridorBottomRight.x, entranceY - m_gapSize / 2.0f),
-        wallColor, wallThickness
-    );
-    drawList->AddLine(
-        ImVec2(corridorBottomRight.x, entranceY + m_gapSize / 2.0f),
-        ImVec2(corridorBottomRight.x, corridorBottomRight.y),
-        wallColor, wallThickness
-    );
-
-    ImU32 entranceColor = IM_COL32(0, 255, 0, 255);
-    ImU32 exitColor = IM_COL32(255, 0, 0, 255);
-    float markerSize = 12.0f;
-
-    drawList->AddRectFilled(
-        ImVec2(corridorBottomRight.x - markerSize / 2, entranceY - markerSize / 2),
-        ImVec2(corridorBottomRight.x + markerSize / 2, entranceY + markerSize / 2),
-        entranceColor
-    );
-
-    drawList->AddRectFilled(
-        ImVec2(corridorTopLeft.x - markerSize / 2, exitY - markerSize / 2),
-        ImVec2(corridorTopLeft.x + markerSize / 2, exitY + markerSize / 2),
-        exitColor
-    );
+    float ms = 12.0f;
+    drawList->AddRectFilled(ImVec2(corridorBottomRight.x - ms / 2, entranceY - ms / 2), ImVec2(corridorBottomRight.x + ms / 2, entranceY + ms / 2), IM_COL32(0, 255, 0, 255));
+    drawList->AddRectFilled(ImVec2(corridorTopLeft.x - ms / 2, exitY - ms / 2), ImVec2(corridorTopLeft.x + ms / 2, exitY + ms / 2), IM_COL32(255, 0, 0, 255));
 
     for (const auto& a : agents) {
-        ImVec2 p(
-            corridorTopLeft.x + a.x * m_corridorWidth,
-            corridorTopLeft.y + a.y * m_corridorHeight
-        );
+        ImVec2 p(corridorTopLeft.x + a.x * corridorW, corridorTopLeft.y + a.y * corridorH);
         drawList->AddCircleFilled(p, 3.0f, IM_COL32(0, 200, 255, 255));
     }
 }

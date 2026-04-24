@@ -36,7 +36,7 @@ public:
     void reset(std::vector<Agent>& agents) override;
     void update(float deltaTime, std::vector<Agent>& agents) override;
     bool isFinished() const override;
-    void draw(const std::vector<Agent>& agents) override;
+    void draw(const std::vector<Agent>& agents, float xOffset, float widthScale) override;
 
 private:
     int m_width;
