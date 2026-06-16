@@ -1,10 +1,2 @@
-#include <iostream>
-#include "imgui.h"
-
-struct Agent {
-    ImVec2 pos;
-    ImVec2 velocity;
-
-    float bestValue;
-    ImVec2 bestPos;
-};
+// Agent.cpp – implementation lives in Agent.h (POD struct).
+// This file is intentionally left empty to avoid duplicate definition issues.

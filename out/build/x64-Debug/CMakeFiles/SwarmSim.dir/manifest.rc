@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/kiral/source/repos/KirillSilesia/Swarm-Intelligence-Simulation-Framework/out/build/x64-Debug/CMakeFiles/SwarmSim.dir/embed.manifest"

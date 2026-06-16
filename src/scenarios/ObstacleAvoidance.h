@@ -1,31 +1,15 @@
-#pragma once
+﻿#pragma once
 #include "Scenario.h"
-#include "Agent.h"
 #include <vector>
 
-struct Vec2 {
-    float x, y;
-    Vec2() : x(0), y(0) {}
-    Vec2(float x, float y) : x(x), y(y) {}
-    Vec2 operator+(const Vec2& other) const { return Vec2(x + other.x, y + other.y); }
-    Vec2 operator-(const Vec2& other) const { return Vec2(x - other.x, y - other.y); }
-    Vec2 operator*(float scalar) const { return Vec2(x * scalar, y * scalar); }
-};
-
-enum class ObstacleShape {
-    Circle,
-    Rectangle,
-    Triangle
-};
-
-struct Obstacle {
-    float relativeX;
-    float relativeY;
-    Vec2 velocity;
-    float size;
-    ObstacleShape shape;
+struct MovingObstacle {
+    float rx, ry;       // relative position [0,1] inside corridor
+    float vx, vy;       // velocity (pixels/s → converted to relative)
+    float normSize;     // collision/display radius in normalized coords
+    float displaySize;  // radius in pixels for drawing
+    int   shape;        // 0=circle, 1=rect, 2=triangle
     float rotation;
-    float rotationSpeed;
+    float rotSpeed;
 };
 
 class ObstacleAvoidance : public Scenario {
@@ -34,19 +18,27 @@ public:
 
     const char* getName() const override;
     void reset(std::vector<Agent>& agents) override;
-    void update(float deltaTime, std::vector<Agent>& agents) override;
+    void update(float dt, std::vector<Agent>& agents) override;
     bool isFinished() const override;
     void draw(const std::vector<Agent>& agents, float xOffset, float widthScale) override;
 
+    // Scenario interface
+    float evaluateFitness(float x, float y) const override;
+    float getGoalX()  const override { return 0.97f; }
+    float getGoalY()  const override { return 0.50f; }
+    float getStartX() const override { return 0.03f; }
+    float getStartY() const override { return 0.50f; }
+    bool  canMoveTo(float x1, float y1, float x2, float y2) const override;
+
 private:
-    int m_width;
-    int m_height;
-    bool m_finished;
-    float m_corridorWidth;
-    float m_corridorHeight;
-    float m_gapSize;
-    std::vector<Obstacle> m_obstacles;
+    int   m_width, m_height;
+    bool  m_finished = false;
+    float m_corridorW = 600.0f;
+    float m_corridorH = 300.0f;
+    float m_gapHalf = 35.0f;   // half-height of entry/exit gap
+
+    std::vector<MovingObstacle> m_obstacles;
+    int m_collisions = 0;
 
     void generateObstacles();
-    bool isInsideCorridor(const Vec2& pos, const Vec2& topLeft, const Vec2& bottomRight) const;
 };

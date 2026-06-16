@@ -1,167 +1,168 @@
 #include "PathPlanning.h"
 #include "imgui.h"
-#include <stack>
-#include <cstdlib>
 #include <algorithm>
+#include <cmath>
+#include <cstdlib>
+#include <stack>
 
 PathPlanning::PathPlanning(int width, int height)
-    : m_width(width), m_height(height), m_finished(false)
-{
+    : m_width(width), m_height(height), m_finished(false) {
 }
 
-bool PathPlanning::isMoveValid(float x1, float y1, float x2, float y2) const {
-    int cellX1 = (int)(x1 * m_width);
-    int cellY1 = (int)(y1 * m_height);
+const char* PathPlanning::getName() const { return "Path Planning (Maze)"; }
 
-    int cellX2 = (int)(x2 * m_width);
-    int cellY2 = (int)(y2 * m_height);
+// ---- Maze generation (DFS recursive backtracker) ---------------------------
 
-    cellX1 = std::clamp(cellX1, 0, m_width - 1);
-    cellY1 = std::clamp(cellY1, 0, m_height - 1);
-    cellX2 = std::clamp(cellX2, 0, m_width - 1);
-    cellY2 = std::clamp(cellY2, 0, m_height - 1);
-    
-    if (cellX1 == cellX2 && cellY1 == cellY2)
-        return true;
+void PathPlanning::generateMaze() {
+    m_cells.assign(m_width * m_height, Cell{});
+    std::stack<int> stk;
+    int cur = 0;
+    m_cells[0].visited = true;
+    stk.push(0);
 
-    const Cell& c = m_cells[index(cellX1, cellY1)];
+    while (!stk.empty()) {
+        int c = stk.top();
+        int x = c % m_width, y = c / m_width;
 
-    if (cellX2 > cellX1 && c.walls[1]) return false;
+        std::vector<int> nbrs;
+        if (y > 0 && !m_cells[index(x, y - 1)].visited) nbrs.push_back(0);
+        if (x < m_width - 1 && !m_cells[index(x + 1, y)].visited) nbrs.push_back(1);
+        if (y < m_height - 1 && !m_cells[index(x, y + 1)].visited) nbrs.push_back(2);
+        if (x > 0 && !m_cells[index(x - 1, y)].visited) nbrs.push_back(3);
 
-    if (cellX2 < cellX1 && c.walls[3]) return false;
+        if (nbrs.empty()) { stk.pop(); continue; }
 
-    if (cellY2 > cellY1 && c.walls[2]) return false;
+        int dir = nbrs[rand() % nbrs.size()];
+        int next;
+        switch (dir) {
+        case 0: next = index(x, y - 1); break;
+        case 1: next = index(x + 1, y); break;
+        case 2: next = index(x, y + 1); break;
+        default:next = index(x - 1, y); break;
+        }
+        m_cells[c].walls[dir] = false;
+        m_cells[next].walls[(dir + 2) % 4] = false;
+        m_cells[next].visited = true;
+        stk.push(next);
+    }
+}
 
-    if (cellY2 < cellY1 && c.walls[0]) return false;
+// ---- Scenario interface ----------------------------------------------------
 
+float PathPlanning::evaluateFitness(float x, float y) const {
+    // Simple Euclidean distance to goal corner
+    float gx = getGoalX(), gy = getGoalY();
+    return std::hypot(x - gx, y - gy);
+}
+
+bool PathPlanning::canMoveTo(float x1, float y1, float x2, float y2) const {
+    if (x2 < 0 || x2 > 1 || y2 < 0 || y2 > 1) return false;
+
+    int cx1 = std::clamp((int)(x1 * m_width), 0, m_width - 1);
+    int cy1 = std::clamp((int)(y1 * m_height), 0, m_height - 1);
+    int cx2 = std::clamp((int)(x2 * m_width), 0, m_width - 1);
+    int cy2 = std::clamp((int)(y2 * m_height), 0, m_height - 1);
+
+    if (cx1 == cx2 && cy1 == cy2) return true;
+
+    const Cell& c = m_cells[index(cx1, cy1)];
+    if (cx2 > cx1 && c.walls[1]) return false;
+    if (cx2 < cx1 && c.walls[3]) return false;
+    if (cy2 > cy1 && c.walls[2]) return false;
+    if (cy2 < cy1 && c.walls[0]) return false;
     return true;
 }
 
-bool PathPlanning::canMove(int x, int y, int dir) const {
-    const Cell& c = m_cells[index(x, y)];
-    return !c.walls[dir];
-}
-
-const char* PathPlanning::getName() const {
-    return "Path Planning (Maze)";
-}
-
-int PathPlanning::index(int x, int y) const {
-    return x + y * m_width;
-}
+// ---- Lifecycle -------------------------------------------------------------
 
 void PathPlanning::reset(std::vector<Agent>& agents) {
     m_finished = false;
-    m_cells.clear();
-    m_cells.resize(m_width * m_height);
-
     generateMaze();
 
-    m_cells[index(0, 0)].walls[3] = false;
-    m_cells[index(m_width - 1, m_height - 1)].walls[1] = false;
-
+    float sx = getStartX(), sy = getStartY();
     for (auto& a : agents) {
-        a.x = 0.0f;
-        a.y = 0.0f;
-        a.vx = 0.0f;
-        a.vy = 0.0f;
+        a.x = sx; a.y = sy;
+        a.vx = a.vy = 0.0f;
+        a.alive = true; a.atGoal = false;
+        a.bestFitness = 1e9f;
+        a.trial = 0;
+        a.weight = 1.0f;
+        a.distTraveled = a.timeAlive = 0.0f;
     }
-}
-
-void PathPlanning::generateMaze() {
-    std::stack<int> stack;
-
-    int current = 0;
-    m_cells[current].visited = true;
-    stack.push(current);
-
-    while (!stack.empty()) {
-        int c = stack.top();
-        int x = c % m_width;
-        int y = c / m_width;
-
-        std::vector<int> neighbors;
-
-        // top
-        if (y > 0 && !m_cells[index(x, y - 1)].visited)
-            neighbors.push_back(0);
-        // right
-        if (x < m_width - 1 && !m_cells[index(x + 1, y)].visited)
-            neighbors.push_back(1);
-        // bottom
-        if (y < m_height - 1 && !m_cells[index(x, y + 1)].visited)
-            neighbors.push_back(2);
-        // left
-        if (x > 0 && !m_cells[index(x - 1, y)].visited)
-            neighbors.push_back(3);
-
-        if (!neighbors.empty()) {
-            int dir = neighbors[rand() % neighbors.size()];
-            int next;
-
-            switch (dir) {
-            case 0: next = index(x, y - 1); break;
-            case 1: next = index(x + 1, y); break;
-            case 2: next = index(x, y + 1); break;
-            case 3: next = index(x - 1, y); break;
-            }
-
-            // Remove walls
-            m_cells[c].walls[dir] = false;
-            m_cells[next].walls[(dir + 2) % 4] = false;
-
-            m_cells[next].visited = true;
-            stack.push(next);
-        }
-        else {
-            stack.pop();
-        }
-    }
+    totalAgents = (int)agents.size();
 }
 
 void PathPlanning::update(float /*dt*/, std::vector<Agent>& agents) {
-    // Maze itself is static
+    // Count agents at goal
+    agentsAtGoal = 0;
+    for (auto& a : agents) {
+        if (a.alive && !a.atGoal && isAtGoal(a.x, a.y))
+            a.atGoal = true;
+        if (a.atGoal) ++agentsAtGoal;
+    }
+    if (agentsAtGoal >= (int)(totalAgents * 0.5f) && totalAgents > 0)
+        m_finished = true;
 }
 
-bool PathPlanning::isFinished() const {
-    return m_finished;
-}
+bool PathPlanning::isFinished() const { return m_finished; }
 
-void PathPlanning::draw(const std::vector<Agent>& agents, float xOffset, float widthScale) {
-    ImDrawList* drawList = ImGui::GetBackgroundDrawList();
+// ---- Drawing ---------------------------------------------------------------
+
+void PathPlanning::draw(const std::vector<Agent>& agents,
+    float xOffset, float widthScale)
+{
+    ImDrawList* dl = ImGui::GetBackgroundDrawList();
     ImGuiIO& io = ImGui::GetIO();
-    float windowHeight = io.DisplaySize.y;
-    float guiHeight = windowHeight / 3.0f;
-    float availableHeight = windowHeight - guiHeight;
+    float wh = io.DisplaySize.y;
+    float guiH = wh / 3.0f;
+    float availH = wh - guiH;
 
-    float cellSize = 20.0f * widthScale;
-    float mazeHeight = m_height * cellSize;
-    float mazeWidth = m_width * cellSize;
-    float yOffset = guiHeight + (availableHeight - mazeHeight) / 2.0f;
-    ImVec2 origin(xOffset + 20, yOffset);
+    float cellSize = std::min(18.0f * widthScale,
+        (availH * 0.9f) / m_height);
+    float mazeW = m_width * cellSize;
+    float mazeH = m_height * cellSize;
+    float yOff = guiH + (availH - mazeH) * 0.5f;
+    ImVec2 O(xOffset + 20.0f, yOff);
 
-    for (int y = 0; y < m_height; ++y) {
-        for (int x = 0; x < m_width; ++x) {
-            const Cell& c = m_cells[index(x, y)];
-            ImVec2 p(x * cellSize + origin.x, y * cellSize + origin.y);
-            if (c.walls[0])
-                drawList->AddLine(p, ImVec2(p.x + cellSize, p.y), IM_COL32(255, 255, 255, 255));
-            if (c.walls[1])
-                drawList->AddLine(ImVec2(p.x + cellSize, p.y), ImVec2(p.x + cellSize, p.y + cellSize), IM_COL32(255, 255, 255, 255));
-            if (c.walls[2])
-                drawList->AddLine(ImVec2(p.x, p.y + cellSize), ImVec2(p.x + cellSize, p.y + cellSize), IM_COL32(255, 255, 255, 255));
-            if (c.walls[3])
-                drawList->AddLine(p, ImVec2(p.x, p.y + cellSize), IM_COL32(255, 255, 255, 255));
+    // Draw pheromone-like visited heatmap (faint)
+    for (int cy = 0; cy < m_height; ++cy)
+        for (int cx = 0; cx < m_width; ++cx) {
+            ImVec2 p(O.x + cx * cellSize, O.y + cy * cellSize);
+            // fill cell background
+            dl->AddRectFilled(p, ImVec2(p.x + cellSize, p.y + cellSize),
+                IM_COL32(30, 30, 35, 255));
+        }
+
+    // Draw walls
+    for (int cy = 0; cy < m_height; ++cy) {
+        for (int cx = 0; cx < m_width; ++cx) {
+            const Cell& c = m_cells[index(cx, cy)];
+            ImVec2 p(O.x + cx * cellSize, O.y + cy * cellSize);
+            ImU32 wc = IM_COL32(200, 200, 220, 255);
+            float t = 1.5f;
+            if (c.walls[0]) dl->AddLine(p, ImVec2(p.x + cellSize, p.y), wc, t);
+            if (c.walls[1]) dl->AddLine(ImVec2(p.x + cellSize, p.y), ImVec2(p.x + cellSize, p.y + cellSize), wc, t);
+            if (c.walls[2]) dl->AddLine(ImVec2(p.x, p.y + cellSize), ImVec2(p.x + cellSize, p.y + cellSize), wc, t);
+            if (c.walls[3]) dl->AddLine(p, ImVec2(p.x, p.y + cellSize), wc, t);
         }
     }
 
-    drawList->AddRectFilled(origin, ImVec2(origin.x + cellSize, origin.y + cellSize), IM_COL32(0, 255, 0, 255));
+    // Green start square
+    dl->AddRectFilled(O, ImVec2(O.x + cellSize, O.y + cellSize),
+        IM_COL32(0, 200, 80, 180));
+    dl->AddText(ImVec2(O.x + 2, O.y + 2), IM_COL32(255, 255, 255, 220), "S");
 
-    ImVec2 endTL(origin.x + (m_width - 1) * cellSize, origin.y + (m_height - 1) * cellSize);
-    drawList->AddRectFilled(endTL, ImVec2(endTL.x + cellSize, endTL.y + cellSize), IM_COL32(255, 0, 0, 255));
+    // Red goal square
+    ImVec2 gp(O.x + (m_width - 1) * cellSize, O.y + (m_height - 1) * cellSize);
+    dl->AddRectFilled(gp, ImVec2(gp.x + cellSize, gp.y + cellSize),
+        IM_COL32(220, 40, 40, 200));
+    dl->AddText(ImVec2(gp.x + 2, gp.y + 2), IM_COL32(255, 255, 255, 220), "G");
 
+    // Agents
     for (const auto& a : agents) {
-        ImVec2 p(origin.x + a.x * mazeWidth, origin.y + a.y * mazeHeight);
-        drawList->AddCircleFilled(p, 3.0f, IM_COL32(0, 200, 255, 255));
+        if (!a.alive) continue;
+        ImVec2 p(O.x + a.x * mazeW, O.y + a.y * mazeH);
+        ImU32 col = a.atGoal ? IM_COL32(255, 220, 0, 255) : IM_COL32(60, 200, 255, 230);
+        dl->AddCircleFilled(p, 3.0f, col);
     }
 }

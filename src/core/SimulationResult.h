@@ -1,17 +1,31 @@
 #pragma once
 #include <string>
+#include <vector>
 
-/**
- * Stores results of a single simulation run or averaged experiment.
- */
+struct ReportFrame {
+    float time = 0.0f;
+    float bestFitness = 1e9f;
+    int   aliveAgents = 0;
+    int   atGoalAgents = 0;
+    float avgSpeed = 0.0f;
+    float diversity = 0.0f;
+};
+
 struct SimulationResult {
     std::string algorithmName;
     std::string scenarioName;
+    int   agentCount = 0;
+    float completionTime = 0.0f;
+    int   agentsAtGoal = 0;
+    int   finalAliveAgents = 0;
+    bool  completed = false;
 
-    int agentCount = 0;
-    int runs = 1;
+    std::vector<ReportFrame> frames;
 
-    float averageCompletionTime = 0.0f;
-    float minTime = 0.0f;
-    float maxTime = 0.0f;
+    int   highPriorityFound = 0;
+    int   mediumPriorityFound = 0;
+    int   lowPriorityFound = 0;
+    float timeAllHighPriority = -1.0f;
+
+    int   totalCollisions = 0;
 };

@@ -1,53 +1,41 @@
+﻿/*
+ * Particle Swarm Optimization – exact spec implementation.
+ *
+ * for each particle i:
+ *   xi ~ U(blo,bup)   pi <- xi   vi ~ U(-|bup-blo|,|bup-blo|)
+ *   if f(pi)<f(g): g <- pi
+ *
+ * per update:
+ *   for each dim d:
+ *     rp,rg ~ U(0,1)
+ *     vi,d <- w*vi,d + φp*rp*(pi,d-xi,d) + φg*rg*(gd-xi,d)
+ *   xi <- xi + vi
+ *   if f(xi)<f(pi): pi <- xi;  if f(pi)<f(g): g <- pi
+ */
 #include "ParticleSwarmOptimization.h"
-#include "../scenarios/PathPlanning.h"
-#include <cstdlib>
+#include "imgui.h"
 #include <algorithm>
 #include <cmath>
+#include <cstdlib>
 
-static float frand() { return (float)rand() / RAND_MAX; }
+static float frand() { return (float)rand() / (float)RAND_MAX; }
 
-const char* ParticleSwarmOptimization::getName() const {
-    return "Particle Swarm Optimization";
-}
-
-float ParticleSwarmOptimization::fitness(float x, float y, Scenario& scenario) const {
-    float dx = x - 1.0f;
-    float dy = y - 1.0f;
-    float dist = dx * dx + dy * dy;
-
-    PathPlanning* maze = (PathPlanning*)&scenario;
-
-    float penalty = 0.0f;
-
-    if (maze) {
-        const float eps = 0.01f;
-        int blocked = 0;
-
-        if (!maze->isMoveValid(x, y, x + eps, y)) blocked++;
-        if (!maze->isMoveValid(x, y, x - eps, y)) blocked++;
-        if (!maze->isMoveValid(x, y, x, y + eps)) blocked++;
-        if (!maze->isMoveValid(x, y, x, y - eps)) blocked++;
-
-        penalty += blocked * 0.5f;
-    }
-
-    return dist + penalty;
-}
-
-void ParticleSwarmOptimization::initialize(std::vector<Agent>& agents, Scenario& scenario) {
-    float range = 1.0f;
-
-    m_personalBests.resize(agents.size());
+void ParticleSwarmOptimization::initialize(std::vector<Agent>& agents,
+    Scenario& scenario)
+{
     m_globalBestFitness = 1e9f;
 
-    for (int i = 0; i < (int)agents.size(); ++i) {
-        auto& a = agents[i];
+    float range = 1.0f;   // bup - blo
 
+    for (auto& a : agents) {
+        // Position already set by scenario::reset()
         a.vx = -range + frand() * 2.0f * range;
         a.vy = -range + frand() * 2.0f * range;
 
-        float f = fitness(a.x, a.y, scenario);
-        m_personalBests[i] = { a.x, a.y, f };
+        float f = scenario.evaluateFitness(a.x, a.y);
+        a.bestX = a.x;
+        a.bestY = a.y;
+        a.bestFitness = f;
 
         if (f < m_globalBestFitness) {
             m_globalBestFitness = f;
@@ -57,91 +45,87 @@ void ParticleSwarmOptimization::initialize(std::vector<Agent>& agents, Scenario&
     }
 }
 
-void ParticleSwarmOptimization::update(std::vector<Agent>& agents, Scenario& scenario, float dt) {
-    const float w = 0.5f;
-    const float phi_p = 1.4f;
-    const float phi_g = 0.6f;
-    const float maxV = 0.4f;
+void ParticleSwarmOptimization::update(std::vector<Agent>& agents,
+    Scenario& scenario, float dt)
+{
+    const float w = 0.729f;   // inertia weight
+    const float phiP = 1.494f;  // cognitive coefficient
+    const float phiG = 1.494f;  // social coefficient
+    const float maxV = 0.35f;
 
-    PathPlanning* maze = dynamic_cast<PathPlanning*>(&scenario);
+    for (auto& a : agents) {
+        if (!a.alive || a.atGoal) continue;
 
-    for (int i = 0; i < (int)agents.size(); ++i) {
-        auto& a = agents[i];
-        auto& pb = m_personalBests[i];
-
-        float rp = frand();
-        float rg = frand();
-
-        float useGlobal = (frand() < 0.7f) ? 1.0f : 0.0f;
+        // -- velocity update (per spec, no random flags or noise) --
+        float rp = frand(), rg = frand();
 
         a.vx = w * a.vx
-            + phi_p * rp * (pb.x - a.x)
-            + useGlobal * phi_g * rg * (m_globalBestX - a.x);
+            + phiP * rp * (a.bestX - a.x)
+            + phiG * rg * (m_globalBestX - a.x);
 
         a.vy = w * a.vy
-            + phi_p * rp * (pb.y - a.y)
-            + useGlobal * phi_g * rg * (m_globalBestY - a.y);
-
-        a.vx += (frand() - 0.5f) * 0.15f;
-        a.vy += (frand() - 0.5f) * 0.15f;
+            + phiP * rp * (a.bestY - a.y)
+            + phiG * rg * (m_globalBestY - a.y);
 
         a.vx = std::clamp(a.vx, -maxV, maxV);
         a.vy = std::clamp(a.vy, -maxV, maxV);
 
-        if (fabs(a.vx) < 0.0001f && fabs(a.vy) < 0.0001f) {
-            a.vx += (frand() - 0.5f) * 0.2f;
-            a.vy += (frand() - 0.5f) * 0.2f;
+        // -- position update --
+        float nx = a.x + a.vx * dt;
+        float ny = a.y + a.vy * dt;
+
+        if (scenario.canMoveTo(a.x, a.y, nx, ny)) {
+            float ox = a.x, oy = a.y;
+            a.x = std::clamp(nx, 0.0f, 1.0f);
+            a.y = std::clamp(ny, 0.0f, 1.0f);
+            float moved = std::hypot(a.x - ox, a.y - oy);
+            a.distTraveled += moved;
         }
-
-        float newX = a.x + a.vx * dt;
-        float newY = a.y + a.vy * dt;
-
-        bool moved = false;
-
-        if (maze && maze->isMoveValid(a.x, a.y, newX, newY)) {
-            a.x = std::clamp(newX, 0.0f, 1.0f);
-            a.y = std::clamp(newY, 0.0f, 1.0f);
-            moved = true;
-        }
-
-        if (!moved) {
-            if (maze && maze->isMoveValid(a.x, a.y, a.x + a.vx * dt, a.y)) {
-                a.x = std::clamp(a.x + a.vx * dt, 0.0f, 1.0f);
-                a.vy *= -0.2f;
-                moved = true;
+        else {
+            // Reflect velocity on blocked axis
+            float tx = a.x + a.vx * dt, ty = a.y;
+            float tx2 = a.x, ty2 = a.y + a.vy * dt;
+            if (scenario.canMoveTo(a.x, a.y, tx, ty)) {
+                a.x = std::clamp(tx, 0.0f, 1.0f);
+                a.vy *= -0.5f;
             }
-            else if (maze && maze->isMoveValid(a.x, a.y, a.x, a.y + a.vy * dt)) {
-                a.y = std::clamp(a.y + a.vy * dt, 0.0f, 1.0f);
-                a.vx *= -0.2f;
-                moved = true;
+            else if (scenario.canMoveTo(a.x, a.y, tx2, ty2)) {
+                a.y = std::clamp(ty2, 0.0f, 1.0f);
+                a.vx *= -0.5f;
+            }
+            else {
+                // Fully stuck – random kick to escape corner
+                a.vx = (frand() - 0.5f) * maxV;
+                a.vy = (frand() - 0.5f) * maxV;
             }
         }
 
-        if (!moved) {
-            a.vx = (frand() - 0.5f) * maxV;
-            a.vy = (frand() - 0.5f) * maxV;
-
-            float tryX = a.x + a.vx * dt;
-            float tryY = a.y + a.vy * dt;
-
-            if (!maze || maze->isMoveValid(a.x, a.y, tryX, tryY)) {
-                a.x = std::clamp(tryX, 0.0f, 1.0f);
-                a.y = std::clamp(tryY, 0.0f, 1.0f);
-            }
-
-            pb.fitness += 0.3f;
-        }
-
-        float f = fitness(a.x, a.y, scenario);
-
-        if (f < pb.fitness) {
-            pb = { a.x, a.y, f };
-
+        // -- personal / global best update --
+        float f = scenario.evaluateFitness(a.x, a.y);
+        if (f < a.bestFitness) {
+            a.bestFitness = f;
+            a.bestX = a.x;
+            a.bestY = a.y;
             if (f < m_globalBestFitness) {
                 m_globalBestFitness = f;
                 m_globalBestX = a.x;
                 m_globalBestY = a.y;
             }
         }
+
+        a.timeAlive += dt;
+
+        if (scenario.isAtGoal(a.x, a.y))
+            a.atGoal = true;
     }
+}
+
+void ParticleSwarmOptimization::drawOverlay(float xOffset, float widthScale,
+    float yTop, float height)
+{
+    // Draw global best as a bright star
+    ImDrawList* dl = ImGui::GetBackgroundDrawList();
+    float px = xOffset + m_globalBestX * widthScale * 800.0f;  // approximate
+    float py = yTop + m_globalBestY * height;
+    dl->AddCircle(ImVec2(px, py), 8.0f, IM_COL32(255, 220, 0, 200), 12, 2.0f);
 }

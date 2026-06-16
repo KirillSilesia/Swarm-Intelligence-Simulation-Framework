@@ -1,8 +1,19 @@
-#include <iostream>
-#include <vector>
+/*
+ * Swarm Intelligence Simulation Framework – main entry point
+ *
+ * Features:
+ *   - Single / Dual simulation mode
+ *   - 4 algorithms: PSO, ACO, ABC, FSS  (all fully implemented)
+ *   - 3 scenarios: Maze, Reconnaissance, Obstacle Avoidance
+ *   - Algorithm-specific visual overlays (pheromone trails, global best, etc.)
+ *   - After all simulations finish: "View Reports" button
+ *   - Report viewer: Optimisation / Swarm Behaviour / Env Coverage / Comparison
+ *   - Export to Excel (.xlsx) with one click
+ */
+#include <memory>
 #include <cstdlib>
 #include <ctime>
-#include <memory>
+#include <cstring>
 
 #include "imgui.h"
 #include "implot.h"
@@ -12,24 +23,36 @@
 
 #include "core/Agent.h"
 #include "core/Simulation.h"
-#include "scenarios/Scenario.h"
-#include "algorithms/SwarmAlgorithm.h"
-#include "algorithms/ArtificialBeeColony.h"
-#include "algorithms/ParticleSwarmOptimization.h"
+#include "core/ReportManager.h"
+
 #include "algorithms/AntColonyOptimization.h"
+#include "algorithms/ParticleSwarmOptimization.h"
+#include "algorithms/ArtificialBeeColony.h"
 #include "algorithms/FishSchoolSearch.h"
-#include "scenarios/TargetSearch.h"
-#include "scenarios/Reconnaissance.h"
+
 #include "scenarios/PathPlanning.h"
+#include "scenarios/Reconnaissance.h"
 #include "scenarios/ObstacleAvoidance.h"
 
-std::shared_ptr<Scenario> currentScenario = nullptr;
-std::shared_ptr<Scenario> currentScenario2 = nullptr;
-float dtMultiplier = 1.0f;
-bool dualMode = false;
+ // ============================================================
+ //  State
+ // ============================================================
+static float        g_dtMult = 1.0f;
+static bool         g_dual = false;
+static int          g_agents = 50;
+static int          g_algo1 = 0, g_scen1 = 0;
+static int          g_algo2 = 0, g_scen2 = 1;
 
-std::shared_ptr<SwarmAlgorithm> makeAlgorithm(int choice) {
-    switch (choice) {
+static Simulation   g_sim1, g_sim2;
+static ReportManager g_reports;
+
+static std::shared_ptr<Scenario> g_scenario1, g_scenario2;
+
+// ============================================================
+//  Factories
+// ============================================================
+static std::shared_ptr<SwarmAlgorithm> makeAlgo(int idx) {
+    switch (idx) {
     case 0: return std::make_shared<AntColonyOptimization>();
     case 1: return std::make_shared<ParticleSwarmOptimization>();
     case 2: return std::make_shared<ArtificialBeeColony>();
@@ -38,21 +61,27 @@ std::shared_ptr<SwarmAlgorithm> makeAlgorithm(int choice) {
     return nullptr;
 }
 
-std::shared_ptr<Scenario> makeScenario(int choice) {
-    switch (choice) {
+static std::shared_ptr<Scenario> makeScenario(int idx) {
+    switch (idx) {
     case 0: return std::make_shared<PathPlanning>(20, 20);
     case 1: return std::make_shared<Reconnaissance>(ImVec2(400.0f, 400.0f));
-    case 2: return std::make_shared<ObstacleAvoidance>(800, 600);
+    case 2: return std::make_shared<ObstacleAvoidance>(800, 400);
     }
     return nullptr;
 }
 
-void renderGUI(Simulation& sim, Simulation& sim2,
-    int& agentCount, int& algoChoice, int& scenChoice,
-    int& algoChoice2, int& scenChoice2) {
-    ImGuiViewport* viewport = ImGui::GetMainViewport();
-    ImGui::SetNextWindowPos(ImVec2(viewport->Pos.x, viewport->Pos.y), ImGuiCond_Always);
-    ImGui::SetNextWindowSize(ImVec2(viewport->Size.x, viewport->Size.y / 3.0f), ImGuiCond_Always);
+// ============================================================
+//  Control panel (top third of window)
+// ============================================================
+static void renderControlPanel()
+{
+    const char* algos[] = { "ACO", "PSO", "ABC", "FSS" };
+    const char* scens[] = { "Maze", "Reconnaissance", "Obstacle Avoidance" };
+
+    ImGuiViewport* vp = ImGui::GetMainViewport();
+    ImGui::SetNextWindowPos(vp->Pos, ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(vp->Size.x, vp->Size.y / 3.0f),
+        ImGuiCond_Always);
 
     ImGuiWindowFlags flags =
         ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize |
@@ -60,59 +89,89 @@ void renderGUI(Simulation& sim, Simulation& sim2,
 
     ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
     ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 1.0f);
-    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.15f, 0.15f, 0.15f, 1.0f));
-    ImGui::Begin("Simulation Control", nullptr, flags);
+    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.12f, 0.12f, 0.16f, 1.0f));
+    ImGui::Begin("Control", nullptr, flags);
 
-    float checkboxWidth = 120.0f;
-    ImGui::SetCursorPosX(ImGui::GetWindowWidth() - checkboxWidth);
+    // ---- Top row ----
     ImGui::SetCursorPosY(8.0f);
-    ImGui::Checkbox("Dual Mode", &dualMode);
 
-    ImGui::SetCursorPosY(8.0f);
-    ImGui::SetCursorPosX(8.0f);
+    float rightEdge = ImGui::GetWindowWidth() - 130.0f;
+    ImGui::SetCursorPosX(rightEdge);
+    ImGui::Checkbox("Dual Mode", &g_dual);
+    ImGui::SetCursorPosY(ImGui::GetCursorPosY());
 
-    const char* algos[] = { "ACO", "PSO", "ABC", "FSS" };
-    const char* scenes[] = { "Path Planning", "Reconnaissance", "Obstacle Avoidance" };
+    ImGui::SetCursorPos(ImVec2(8.0f, 8.0f));
+    ImGui::SliderFloat("Speed", &g_dtMult, 0.1f, 10.0f, "%.1fx");
+    ImGui::SliderInt("Agents", &g_agents, 10, 200);
 
-    ImGui::SliderFloat("Speed", &dtMultiplier, 0.1f, 10.0f, "%.1fx");
-    ImGui::SliderInt("Agents", &agentCount, 10, 200);
+    ImGui::Separator();
 
-    if (dualMode) {
-        ImGui::Columns(2, "dual_columns", true);
-
-        ImGui::Text("--- Simulation 1 ---");
-        ImGui::Combo("Algorithm##1", &algoChoice, algos, IM_ARRAYSIZE(algos));
-        ImGui::Combo("Scenario##1", &scenChoice, scenes, IM_ARRAYSIZE(scenes));
-
+    // ---- Combo boxes ----
+    if (g_dual) {
+        ImGui::Columns(2, "dual_cols", true);
+        ImGui::TextColored(ImVec4(0.4f, 0.9f, 0.4f, 1.0f), "Simulation 1");
+        ImGui::Combo("Algorithm##1", &g_algo1, algos, 4);
+        ImGui::Combo("Scenario##1", &g_scen1, scens, 3);
         ImGui::NextColumn();
-
-        ImGui::Text("--- Simulation 2 ---");
-        ImGui::Combo("Algorithm##2", &algoChoice2, algos, IM_ARRAYSIZE(algos));
-        ImGui::Combo("Scenario##2", &scenChoice2, scenes, IM_ARRAYSIZE(scenes));
-
+        ImGui::TextColored(ImVec4(0.4f, 0.7f, 1.0f, 1.0f), "Simulation 2");
+        ImGui::Combo("Algorithm##2", &g_algo2, algos, 4);
+        ImGui::Combo("Scenario##2", &g_scen2, scens, 3);
         ImGui::Columns(1);
     }
     else {
-        ImGui::Combo("Algorithm", &algoChoice, algos, IM_ARRAYSIZE(algos));
-        ImGui::Combo("Scenario", &scenChoice, scenes, IM_ARRAYSIZE(scenes));
+        ImGui::Combo("Algorithm", &g_algo1, algos, 4);
+        ImGui::Combo("Scenario", &g_scen1, scens, 3);
     }
 
-    if (ImGui::Button("Run Simulation")) {
-        auto algo = makeAlgorithm(algoChoice);
-        auto scen = makeScenario(scenChoice);
-        if (algo && scen) {
-            currentScenario = scen;
-            sim.start(algo, scen, agentCount);
-        }
+    ImGui::Spacing();
 
-        if (dualMode) {
-            auto algo2 = makeAlgorithm(algoChoice2);
-            auto scen2 = makeScenario(scenChoice2);
-            if (algo2 && scen2) {
-                currentScenario2 = scen2;
-                sim2.start(algo2, scen2, agentCount);
-            }
+    // ---- Run button ----
+    bool sim1Done = g_sim1.hasFinished();
+    bool sim2Done = !g_dual || g_sim2.hasFinished();
+    bool allDone = sim1Done && sim2Done;
+
+    ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2f, 0.55f, 0.2f, 1.0f));
+    if (ImGui::Button("Run Simulation", ImVec2(160, 0))) {
+        g_scenario1 = makeScenario(g_scen1);
+        auto a1 = makeAlgo(g_algo1);
+        if (a1 && g_scenario1)
+            g_sim1.start(a1, g_scenario1, g_agents);
+
+        if (g_dual) {
+            g_scenario2 = makeScenario(g_scen2);
+            auto a2 = makeAlgo(g_algo2);
+            if (a2 && g_scenario2)
+                g_sim2.start(a2, g_scenario2, g_agents);
         }
+    }
+    ImGui::PopStyleColor();
+
+    // ---- Status ----
+    ImGui::SameLine(0, 16);
+    if (g_sim1.isRunning())
+        ImGui::TextColored(ImVec4(0.3f, 1.0f, 0.3f, 1.0f), "[Sim 1 Running]");
+    else if (g_sim1.hasFinished())
+        ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.3f, 1.0f), "[Sim 1 Finished]");
+    if (g_dual) {
+        ImGui::SameLine(0, 12);
+        if (g_sim2.isRunning())
+            ImGui::TextColored(ImVec4(0.3f, 0.6f, 1.0f, 1.0f), "[Sim 2 Running]");
+        else if (g_sim2.hasFinished())
+            ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.3f, 1.0f), "[Sim 2 Finished]");
+    }
+
+    // ---- Report button – appears only when all simulations have finished ----
+    if (allDone && (g_sim1.hasFinished())) {
+        ImGui::SameLine(0, 24);
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.7f, 0.3f, 0.1f, 1.0f));
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.5f, 0.1f, 1.0f));
+        if (ImGui::Button("View Reports", ImVec2(140, 0))) {
+            g_reports.setResults(g_sim1.getResult(),
+                g_dual ? &g_sim2.getResult() : nullptr,
+                g_dual);
+            g_reports.open();
+        }
+        ImGui::PopStyleColor(2);
     }
 
     ImGui::End();
@@ -120,11 +179,37 @@ void renderGUI(Simulation& sim, Simulation& sim2,
     ImGui::PopStyleVar(2);
 }
 
+// ============================================================
+//  Render a single simulation (scenario + overlays)
+// ============================================================
+static void renderSim(const Simulation& sim,
+    const std::shared_ptr<Scenario>& scen,
+    float xOffset, float widthScale)
+{
+    if (!scen) return;
+    scen->draw(sim.getAgents(), xOffset, widthScale);
+
+    // Algorithm overlay (pheromones, global best, etc.)
+    if (sim.getAlgorithm()) {
+        ImGuiIO& io = ImGui::GetIO();
+        float guiH = io.DisplaySize.y / 3.0f;
+        float availH = io.DisplaySize.y - guiH;
+        sim.getAlgorithm()->drawOverlay(xOffset, widthScale, guiH, availH);
+    }
+}
+
+// ============================================================
+//  main
+// ============================================================
 int main() {
-    srand(static_cast<unsigned int>(time(nullptr)));
+    srand((unsigned)time(nullptr));
 
     if (!glfwInit()) return -1;
-    GLFWwindow* window = glfwCreateWindow(1280, 720, "Swarm Simulation", nullptr, nullptr);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    GLFWwindow* window = glfwCreateWindow(1400, 800,
+        "Swarm Intelligence Framework",
+        nullptr, nullptr);
     if (!window) { glfwTerminate(); return -1; }
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
@@ -132,14 +217,20 @@ int main() {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImPlot::CreateContext();
+
+    ImGuiIO& io = ImGui::GetIO();
+    io.Fonts->AddFontDefault();
+
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 130");
     ImGui::StyleColorsDark();
 
-    Simulation sim, sim2;
-    int agentCount = 50;
-    int algoChoice = 0, scenChoice = 0;
-    int algoChoice2 = 0, scenChoice2 = 0;
+    // Slightly adjusted style
+    ImGuiStyle& style = ImGui::GetStyle();
+    style.WindowRounding = 4.0f;
+    style.FrameRounding = 3.0f;
+    style.GrabRounding = 3.0f;
+    style.Colors[ImGuiCol_WindowBg] = ImVec4(0.12f, 0.12f, 0.16f, 0.96f);
 
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
@@ -147,33 +238,40 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        renderGUI(sim, sim2, agentCount, algoChoice, scenChoice, algoChoice2, scenChoice2);
+        // ---- Update simulations ----
+        float dt = 0.016f * g_dtMult;
+        if (g_sim1.isRunning()) g_sim1.update(dt);
+        if (g_dual && g_sim2.isRunning()) g_sim2.update(dt);
 
-        float dt = 0.016f * dtMultiplier;
+        // ---- Draw control panel ----
+        renderControlPanel();
 
-        if (dualMode) {
-            ImGuiIO& io = ImGui::GetIO();
-            float halfWidth = io.DisplaySize.x / 2.0f;
+        // ---- Draw simulation viewports ----
+        if (g_dual) {
+            float half = io.DisplaySize.x * 0.5f;
+            renderSim(g_sim1, g_scenario1, 0.0f, 0.5f);
+            renderSim(g_sim2, g_scenario2, half, 0.5f);
 
-            if (sim.isRunning()) sim.update(dt);
-            if (currentScenario)
-                currentScenario->draw(sim.getAgents(), 0.0f, 1.0f);
-
-            if (sim2.isRunning()) sim2.update(dt);
-            if (currentScenario2)
-                currentScenario2->draw(sim2.getAgents(), halfWidth, 1.0f);
+            // Divider line
+            ImDrawList* dl = ImGui::GetBackgroundDrawList();
+            float guiH = io.DisplaySize.y / 3.0f;
+            dl->AddLine(ImVec2(half, guiH),
+                ImVec2(half, io.DisplaySize.y),
+                IM_COL32(100, 100, 100, 160), 1.5f);
         }
         else {
-            if (sim.isRunning()) sim.update(dt);
-            if (currentScenario)
-                currentScenario->draw(sim.getAgents(), 0.0f, 1.0f);
+            renderSim(g_sim1, g_scenario1, 0.0f, 1.0f);
         }
 
+        // ---- Report window ----
+        g_reports.drawReportWindows();
+
+        // ---- Render ----
         ImGui::Render();
-        int display_w, display_h;
-        glfwGetFramebufferSize(window, &display_w, &display_h);
-        glViewport(0, 0, display_w, display_h);
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        int dw, dh;
+        glfwGetFramebufferSize(window, &dw, &dh);
+        glViewport(0, 0, dw, dh);
+        glClearColor(0.07f, 0.07f, 0.10f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         glfwSwapBuffers(window);

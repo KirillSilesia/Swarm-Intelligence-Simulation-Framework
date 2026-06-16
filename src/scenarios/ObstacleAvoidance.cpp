@@ -1,208 +1,259 @@
+﻿/*
+ * ObstacleAvoidance scenario.
+ *
+ * Corridor layout (normalized coords):
+ *   Start (GREEN) at LEFT  (x≈0.03, y≈0.5)
+ *   Goal  (RED)   at RIGHT (x≈0.97, y≈0.5)
+ *
+ * Agents navigate left→right through moving obstacles.
+ * Collision with an obstacle → agent.alive = false (agent disappears).
+ * Finish: ≥50% of original agents reached the right-side goal, or all dead.
+ */
 #include "ObstacleAvoidance.h"
 #include "imgui.h"
+#include <algorithm>
 #include <cmath>
 #include <cstdlib>
 
-ObstacleAvoidance::ObstacleAvoidance(int width, int height)
-    : m_width(width), m_height(height), m_finished(false)
-{
+static float frand() { return (float)rand() / (float)RAND_MAX; }
+
+ObstacleAvoidance::ObstacleAvoidance(int w, int h)
+    : m_width(w), m_height(h) {
 }
 
-const char* ObstacleAvoidance::getName() const {
-    return "Obstacle Avoidance";
-}
+const char* ObstacleAvoidance::getName() const { return "Obstacle Avoidance"; }
 
-void ObstacleAvoidance::reset(std::vector<Agent>& agents) {
-    m_finished = false;
-    m_obstacles.clear();
-
-    m_corridorWidth = 600.0f;
-    m_corridorHeight = 400.0f;
-    m_gapSize = 60.0f;
-
-    generateObstacles();
-
-    for (auto& a : agents) {
-        a.x = 0.0f;
-        a.y = 0.5f;
-        a.vx = 0.0f;
-        a.vy = 0.0f;
-    }
-}
+// ---- Obstacle generation ---------------------------------------------------
 
 void ObstacleAvoidance::generateObstacles() {
-    int numObstacles = 10 + rand() % 6;
-
-    for (int i = 0; i < numObstacles; ++i) {
-        Obstacle obs;
-
-        obs.relativeX = 1.0f + (50.0f + (rand() % 200)) / m_corridorWidth;
-        obs.relativeY = (30.0f + (rand() % (int)(m_corridorHeight - 60.0f))) / m_corridorHeight;
-
-        obs.velocity = Vec2(
-            -(30.0f + (rand() % 70)),
-            (rand() % 40) - 20.0f
-        );
-
-        obs.size = 15.0f + (rand() % 35);
-
-        int shapeType = rand() % 3;
-        switch (shapeType) {
-        case 0: obs.shape = ObstacleShape::Circle; break;
-        case 1: obs.shape = ObstacleShape::Rectangle; break;
-        case 2: obs.shape = ObstacleShape::Triangle; break;
-        }
-
-        obs.rotation = (rand() % 360) * 3.14159f / 180.0f;
-        obs.rotationSpeed = ((rand() % 100) - 50) / 50.0f;
-
-        m_obstacles.push_back(obs);
+    m_obstacles.clear();
+    int n = 8 + rand() % 6;
+    for (int i = 0; i < n; ++i) {
+        MovingObstacle o;
+        o.rx = 0.15f + frand() * 0.7f;
+        o.ry = 0.1f + frand() * 0.8f;
+        float speedX = -(0.03f + frand() * 0.07f);   // normalized/s
+        float speedY = (frand() - 0.5f) * 0.04f;
+        o.vx = speedX; o.vy = speedY;
+        o.displaySize = 12.0f + frand() * 20.0f;
+        o.normSize = o.displaySize / m_corridorW;
+        o.shape = rand() % 3;
+        o.rotation = frand() * 6.28f;
+        o.rotSpeed = (frand() - 0.5f) * 2.0f;
+        m_obstacles.push_back(o);
     }
 }
 
-bool ObstacleAvoidance::isInsideCorridor(const Vec2& pos, const Vec2& topLeft, const Vec2& bottomRight) const {
-    if (pos.x < topLeft.x || pos.x > bottomRight.x) {
-        return false;
-    }
-    if (pos.y < topLeft.y || pos.y > bottomRight.y) {
-        return false;
-    }
+// ---- Scenario interface ----------------------------------------------------
 
-    float entranceY = topLeft.y + m_corridorHeight / 2.0f;
-    float exitY = entranceY;
-
-    if (pos.x < topLeft.x + 10.0f) {
-        if (pos.y < exitY - m_gapSize / 2.0f || pos.y > exitY + m_gapSize / 2.0f) {
-            return false;
-        }
+float ObstacleAvoidance::evaluateFitness(float x, float y) const {
+    // Minimize: want to move right, so base = (1-x)
+    float base = 1.0f - x;
+    // Penalty for being close to obstacles
+    for (const auto& o : m_obstacles) {
+        float dx = x - o.rx, dy = y - o.ry;
+        float d = std::hypot(dx, dy);
+        float safe = o.normSize + 0.04f;
+        if (d < safe) base += (safe - d) * 8.0f;
     }
+    return base;
+}
 
-    if (pos.x > bottomRight.x - 10.0f) {
-        if (pos.y < entranceY - m_gapSize / 2.0f || pos.y > entranceY + m_gapSize / 2.0f) {
-            return false;
-        }
+bool ObstacleAvoidance::canMoveTo(float /*x1*/, float /*y1*/,
+    float x2, float y2) const {
+    if (x2 < 0.0f || x2 > 1.0f) return false;
+    if (y2 < 0.0f || y2 > 1.0f) return false;
+    // Entry/exit gaps are centred at y=0.5
+    float gapNorm = m_gapHalf / m_corridorH;
+    if (x2 < 0.02f) {
+        // Left wall – must be in gap
+        if (std::abs(y2 - 0.5f) > gapNorm) return false;
     }
-
+    if (x2 > 0.98f) {
+        // Right wall – must be in gap
+        if (std::abs(y2 - 0.5f) > gapNorm) return false;
+    }
     return true;
 }
 
-void ObstacleAvoidance::update(float deltaTime, std::vector<Agent>& agents) {
-    ImGuiIO& io = ImGui::GetIO();
-    float windowHeight = io.DisplaySize.y;
-    float guiHeight = windowHeight / 3.0f;
-    float availableHeight = windowHeight - guiHeight;
-    float yOffset = guiHeight + (availableHeight - m_corridorHeight) / 2.0f;
+// ---- Lifecycle -------------------------------------------------------------
 
-    Vec2 corridorTopLeft(20.0f, yOffset);
-    Vec2 corridorBottomRight(corridorTopLeft.x + m_corridorWidth, corridorTopLeft.y + m_corridorHeight);
+void ObstacleAvoidance::reset(std::vector<Agent>& agents) {
+    m_finished = false;
+    m_collisions = 0;
+    generateObstacles();
 
-    for (auto& obs : m_obstacles) {
-        Vec2 position(
-            corridorTopLeft.x + obs.relativeX * m_corridorWidth,
-            corridorTopLeft.y + obs.relativeY * m_corridorHeight
-        );
+    float sx = getStartX(), sy = getStartY();
+    for (auto& a : agents) {
+        a.x = sx + (frand() - 0.5f) * 0.02f;
+        a.y = sy + (frand() - 0.5f) * 0.08f;
+        a.x = std::clamp(a.x, 0.0f, 1.0f);
+        a.y = std::clamp(a.y, 0.0f, 1.0f);
+        a.vx = a.vy = 0.0f;
+        a.alive = true; a.atGoal = false;
+        a.bestFitness = 1e9f; a.trial = 0;
+        a.weight = 1.0f; a.distTraveled = a.timeAlive = 0.0f;
+    }
+    totalAgents = (int)agents.size();
+    elapsedTime = 0.0f;
+    agentsAtGoal = 0;
+}
 
-        position = position + obs.velocity * deltaTime;
+void ObstacleAvoidance::update(float dt, std::vector<Agent>& agents) {
+    elapsedTime += dt;
 
-        obs.rotation += obs.rotationSpeed * deltaTime;
+    // 1. Move obstacles
+    for (auto& o : m_obstacles) {
+        o.rx += o.vx * dt;
+        o.ry += o.vy * dt;
+        o.rotation += o.rotSpeed * dt;
 
-        if (position.y < corridorTopLeft.y + obs.size) {
-            position.y = corridorTopLeft.y + obs.size;
-            obs.velocity.y = -obs.velocity.y;
-        }
-        if (position.y > corridorBottomRight.y - obs.size) {
-            position.y = corridorBottomRight.y - obs.size;
-            obs.velocity.y = -obs.velocity.y;
-        }
+        // Bounce off top/bottom
+        if (o.ry < 0.05f) { o.ry = 0.05f; o.vy = std::abs(o.vy); }
+        if (o.ry > 0.95f) { o.ry = 0.95f; o.vy = -std::abs(o.vy); }
 
-        if (position.x < corridorTopLeft.x - obs.size - 100.0f) {
-            obs.relativeX = 1.0f + (50.0f + (rand() % 100)) / m_corridorWidth;
-            obs.relativeY = (30.0f + (rand() % (int)(m_corridorHeight - 60.0f))) / m_corridorHeight;
-            obs.velocity.x = -(30.0f + (rand() % 70));
-            obs.velocity.y = (rand() % 40) - 20.0f;
-        }
-        else {
-            obs.relativeX = (position.x - corridorTopLeft.x) / m_corridorWidth;
-            obs.relativeY = (position.y - corridorTopLeft.y) / m_corridorHeight;
+        // Wrap around left edge → respawn on right
+        if (o.rx < -0.1f) {
+            o.rx = 1.05f + frand() * 0.3f;
+            o.ry = 0.1f + frand() * 0.8f;
         }
     }
+
+    // 2. Collision detection – kill agents that touch obstacles
+    for (auto& a : agents) {
+        if (!a.alive || a.atGoal) continue;
+        for (const auto& o : m_obstacles) {
+            float dx = a.x - o.rx, dy = a.y - o.ry;
+            float d = std::hypot(dx, dy);
+            if (d < o.normSize * 1.1f) {
+                a.alive = false;
+                ++m_collisions;
+                break;
+            }
+        }
+    }
+
+    // 3. Goal check (reached right side within gap)
+    agentsAtGoal = 0;
+    float gapNorm = m_gapHalf / m_corridorH;
+    for (auto& a : agents) {
+        if (!a.alive) continue;
+        if (a.x >= 0.95f && std::abs(a.y - 0.5f) <= gapNorm)
+            a.atGoal = true;
+        if (a.atGoal) ++agentsAtGoal;
+    }
+
+    // 4. Finish condition
+    int alive = 0;
+    for (const auto& a : agents) if (a.alive) ++alive;
+    if (agentsAtGoal >= (int)(totalAgents * 0.5f) ||
+        (alive == 0 && totalAgents > 0))
+        m_finished = true;
 }
 
-bool ObstacleAvoidance::isFinished() const {
-    return m_finished;
-}
+bool ObstacleAvoidance::isFinished() const { return m_finished; }
 
-void ObstacleAvoidance::draw(const std::vector<Agent>& agents, float xOffset, float widthScale) {
-    ImDrawList* drawList = ImGui::GetBackgroundDrawList();
+// ---- Drawing ---------------------------------------------------------------
+
+void ObstacleAvoidance::draw(const std::vector<Agent>& agents,
+    float xOffset, float widthScale)
+{
+    ImDrawList* dl = ImGui::GetBackgroundDrawList();
     ImGuiIO& io = ImGui::GetIO();
-    float windowHeight = io.DisplaySize.y;
-    float guiHeight = windowHeight / 3.0f;
-    float availableHeight = windowHeight - guiHeight;
+    float wh = io.DisplaySize.y;
+    float guiH = wh / 3.0f;
+    float availH = wh - guiH;
 
-    float corridorW = m_corridorWidth * widthScale;
-    float corridorH = m_corridorHeight;
-    float yOffset = guiHeight + (availableHeight - corridorH) / 2.0f;
+    float cW = m_corridorW * widthScale;
+    float cH = std::min(m_corridorH, availH * 0.85f);
+    float yOff = guiH + (availH - cH) * 0.5f;
+    float gapPx = m_gapHalf / m_corridorH * cH;
 
-    Vec2 corridorTopLeft(xOffset + 20.0f, yOffset);
-    Vec2 corridorBottomRight(corridorTopLeft.x + corridorW, corridorTopLeft.y + corridorH);
-    float entranceY = corridorTopLeft.y + corridorH / 2.0f;
-    float exitY = entranceY;
+    ImVec2 TL(xOffset + 20.0f, yOff);
+    ImVec2 BR(TL.x + cW, TL.y + cH);
+    float midY = TL.y + cH * 0.5f;
 
-    drawList->PushClipRect(
-        ImVec2(corridorTopLeft.x, corridorTopLeft.y),
-        ImVec2(corridorBottomRight.x, corridorBottomRight.y), true);
+    // Corridor background
+    dl->AddRectFilled(TL, BR, IM_COL32(20, 20, 30, 220));
 
-    for (const auto& obs : m_obstacles) {
-        ImU32 obstacleColor = IM_COL32(255, 165, 0, 255);
-        ImVec2 pos(corridorTopLeft.x + obs.relativeX * corridorW,
-            corridorTopLeft.y + obs.relativeY * corridorH);
+    // Clip obstacles to corridor
+    dl->PushClipRect(TL, BR, true);
 
-        switch (obs.shape) {
-        case ObstacleShape::Circle:
-            drawList->AddCircleFilled(pos, obs.size, obstacleColor);
-            drawList->AddCircle(pos, obs.size, IM_COL32(255, 255, 255, 255), 0, 2.0f);
+    // Draw obstacles
+    for (const auto& o : m_obstacles) {
+        ImVec2 p(TL.x + o.rx * cW, TL.y + o.ry * cH);
+        float  sz = o.displaySize * widthScale;
+        ImU32  fc = IM_COL32(220, 100, 20, 230);
+        ImU32  oc = IM_COL32(255, 200, 100, 200);
+
+        switch (o.shape) {
+        case 0:  // circle
+            dl->AddCircleFilled(p, sz, fc);
+            dl->AddCircle(p, sz, oc, 0, 1.5f);
             break;
-        case ObstacleShape::Rectangle: {
-            float halfSize = obs.size;
-            float c = std::cos(obs.rotation), s = std::sin(obs.rotation);
+        case 1: { // rotated rectangle
+            float c = std::cos(o.rotation), s = std::sin(o.rotation);
             ImVec2 corners[4] = {
-                ImVec2(pos.x + (-halfSize * c - -halfSize * s), pos.y + (-halfSize * s + -halfSize * c)),
-                ImVec2(pos.x + (halfSize * c - -halfSize * s), pos.y + (halfSize * s + -halfSize * c)),
-                ImVec2(pos.x + (halfSize * c - halfSize * s), pos.y + (halfSize * s + halfSize * c)),
-                ImVec2(pos.x + (-halfSize * c - halfSize * s), pos.y + (-halfSize * s + halfSize * c))
+                {p.x + (-sz * c - -sz * s), p.y + (-sz * s + -sz * c)},
+                {p.x + (sz * c - -sz * s), p.y + (sz * s + -sz * c)},
+                {p.x + (sz * c - sz * s), p.y + (sz * s + sz * c)},
+                {p.x + (-sz * c - sz * s), p.y + (-sz * s + sz * c)}
             };
-            drawList->AddQuadFilled(corners[0], corners[1], corners[2], corners[3], obstacleColor);
-            drawList->AddQuad(corners[0], corners[1], corners[2], corners[3], IM_COL32(255, 255, 255, 255), 2.0f);
+            dl->AddQuadFilled(corners[0], corners[1], corners[2], corners[3], fc);
+            dl->AddQuad(corners[0], corners[1], corners[2], corners[3], oc, 1.5f);
             break;
         }
-        case ObstacleShape::Triangle: {
-            float r = obs.size;
-            ImVec2 p1(pos.x + r * std::cos(obs.rotation), pos.y + r * std::sin(obs.rotation));
-            ImVec2 p2(pos.x + r * std::cos(obs.rotation + 2.0944f), pos.y + r * std::sin(obs.rotation + 2.0944f));
-            ImVec2 p3(pos.x + r * std::cos(obs.rotation - 2.0944f), pos.y + r * std::sin(obs.rotation - 2.0944f));
-            drawList->AddTriangleFilled(p1, p2, p3, obstacleColor);
-            drawList->AddTriangle(p1, p2, p3, IM_COL32(255, 255, 255, 255), 2.0f);
+        case 2: { // triangle
+            float r = sz;
+            ImVec2 p1(p.x + r * cosf(o.rotation), p.y + r * sinf(o.rotation));
+            ImVec2 p2(p.x + r * cosf(o.rotation + 2.094f), p.y + r * sinf(o.rotation + 2.094f));
+            ImVec2 p3(p.x + r * cosf(o.rotation - 2.094f), p.y + r * sinf(o.rotation - 2.094f));
+            dl->AddTriangleFilled(p1, p2, p3, fc);
+            dl->AddTriangle(p1, p2, p3, oc, 1.5f);
             break;
         }
         }
     }
-    drawList->PopClipRect();
 
-    ImU32 wallColor = IM_COL32(150, 150, 150, 255);
-    float wt = 3.0f;
-    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorTopLeft.y), ImVec2(corridorBottomRight.x, corridorTopLeft.y), wallColor, wt);
-    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorBottomRight.y), ImVec2(corridorBottomRight.x, corridorBottomRight.y), wallColor, wt);
-    drawList->AddLine(ImVec2(corridorTopLeft.x, corridorTopLeft.y), ImVec2(corridorTopLeft.x, exitY - m_gapSize / 2), wallColor, wt);
-    drawList->AddLine(ImVec2(corridorTopLeft.x, exitY + m_gapSize / 2), ImVec2(corridorTopLeft.x, corridorBottomRight.y), wallColor, wt);
-    drawList->AddLine(ImVec2(corridorBottomRight.x, corridorTopLeft.y), ImVec2(corridorBottomRight.x, entranceY - m_gapSize / 2), wallColor, wt);
-    drawList->AddLine(ImVec2(corridorBottomRight.x, entranceY + m_gapSize / 2), ImVec2(corridorBottomRight.x, corridorBottomRight.y), wallColor, wt);
-
-    float ms = 12.0f;
-    drawList->AddRectFilled(ImVec2(corridorBottomRight.x - ms / 2, entranceY - ms / 2), ImVec2(corridorBottomRight.x + ms / 2, entranceY + ms / 2), IM_COL32(0, 255, 0, 255));
-    drawList->AddRectFilled(ImVec2(corridorTopLeft.x - ms / 2, exitY - ms / 2), ImVec2(corridorTopLeft.x + ms / 2, exitY + ms / 2), IM_COL32(255, 0, 0, 255));
-
+    // Agents
     for (const auto& a : agents) {
-        ImVec2 p(corridorTopLeft.x + a.x * corridorW, corridorTopLeft.y + a.y * corridorH);
-        drawList->AddCircleFilled(p, 3.0f, IM_COL32(0, 200, 255, 255));
+        if (!a.alive) continue;
+        ImVec2 p(TL.x + a.x * cW, TL.y + a.y * cH);
+        ImU32 col = a.atGoal ? IM_COL32(255, 220, 0, 255) : IM_COL32(60, 200, 255, 230);
+        dl->AddCircleFilled(p, 3.5f, col);
     }
+    dl->PopClipRect();
+
+    // Walls
+    ImU32 wc = IM_COL32(160, 160, 180, 255);
+    float wt = 2.5f;
+    dl->AddLine(TL, ImVec2(BR.x, TL.y), wc, wt); // top
+    dl->AddLine(ImVec2(TL.x, BR.y), BR, wc, wt);  // bottom
+    // Left wall with gap (GREEN = START)
+    dl->AddLine(TL, ImVec2(TL.x, midY - gapPx), wc, wt);
+    dl->AddLine(ImVec2(TL.x, midY + gapPx), ImVec2(TL.x, BR.y), wc, wt);
+    // Right wall with gap (RED = GOAL)
+    dl->AddLine(ImVec2(BR.x, TL.y), ImVec2(BR.x, midY - gapPx), wc, wt);
+    dl->AddLine(ImVec2(BR.x, midY + gapPx), BR, wc, wt);
+
+    // Green start marker (LEFT)
+    float ms = 16.0f;
+    dl->AddRectFilled(ImVec2(TL.x - ms * 0.5f, midY - ms * 0.5f),
+        ImVec2(TL.x + ms * 0.5f, midY + ms * 0.5f),
+        IM_COL32(0, 200, 80, 220));
+    dl->AddText(ImVec2(TL.x - 5, midY - 6), IM_COL32(255, 255, 255, 240), "S");
+
+    // Red goal marker (RIGHT)
+    dl->AddRectFilled(ImVec2(BR.x - ms * 0.5f, midY - ms * 0.5f),
+        ImVec2(BR.x + ms * 0.5f, midY + ms * 0.5f),
+        IM_COL32(220, 40, 40, 220));
+    dl->AddText(ImVec2(BR.x - 5, midY - 6), IM_COL32(255, 255, 255, 240), "G");
+
+    // Stats
+    int alive = 0;
+    for (const auto& a : agents) if (a.alive) ++alive;
+    char buf[128];
+    snprintf(buf, sizeof(buf), "Alive: %d/%d  Goal: %d  Collisions: %d",
+        alive, totalAgents, agentsAtGoal, m_collisions);
+    dl->AddText(ImVec2(TL.x + 4, TL.y + 4), IM_COL32(220, 220, 220, 220), buf);
 }

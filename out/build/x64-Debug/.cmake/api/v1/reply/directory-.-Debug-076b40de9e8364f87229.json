@@ -1,0 +1,126 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"include"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/InstallRequiredSystemLibraries.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 101,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 798,
+				"parent" : 3
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"SwarmSim.exe"
+			],
+			"targetId" : "SwarmSim::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "bin",
+			"paths" : 
+			[
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140_1.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140_2.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140_atomic_wait.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140_codecvt_ids.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140_1.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140.dll",
+				"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/concrt140.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-console-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-console-l1-2-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-datetime-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-debug-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-errorhandling-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-fibers-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-fibers-l1-1-1.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-file-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-file-l1-2-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-file-l2-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-handle-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-heap-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-interlocked-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-libraryloader-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-localization-l1-2-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-memory-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-namedpipe-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-processenvironment-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-processthreads-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-processthreads-l1-1-1.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-profile-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-rtlsupport-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-string-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-synch-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-synch-l1-2-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-sysinfo-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-sysinfo-l1-2-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-timezone-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-core-util-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-conio-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-convert-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-environment-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-filesystem-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-heap-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-locale-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-math-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-multibyte-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-private-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-process-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-runtime-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-stdio-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-string-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-time-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/api-ms-win-crt-utility-l1-1-0.dll",
+				"C:/Program Files (x86)/Windows Kits/10/Redist/10.0.26100.0/ucrt/DLLs/x64/ucrtbase.dll"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}
