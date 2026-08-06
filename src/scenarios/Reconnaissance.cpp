@@ -1,19 +1,4 @@
-﻿/*
- * Reconnaissance scenario.
- *
- * Agents start in a green square (top-left) and must finish in a red square
- * (bottom-right).  Along the way the fitness function guides them toward
- * the highest-priority unvisited objects first ("big routes") and lower-
- * priority ones later ("smaller paths").
- *
- * Priority tiers:
- *   3 – high   (large red circles)
- *   2 – medium (yellow circles)
- *   1 – low    (small green circles)
- *
- * Finish condition: all high-priority objects found + ≥50% of agents at goal.
- */
-#include "Reconnaissance.h"
+﻿#include "Reconnaissance.h"
 #include "Agent.h"
 #include <algorithm>
 #include <cmath>
@@ -27,11 +12,8 @@ Reconnaissance::Reconnaissance(ImVec2 fieldSize)
 
 const char* Reconnaissance::getName() const { return "Reconnaissance"; }
 
-// ---- priority-weighted fitness ---------------------------------------------
 
 float Reconnaissance::evaluateFitness(float x, float y) const {
-    // Return distance to nearest unfound object, weighted by priority.
-    // High-priority objects are more attractive (lower fitness value).
     for (int pri = 3; pri >= 1; --pri) {
         bool anyLeft = false;
         float best = 1e9f;
@@ -39,17 +21,14 @@ float Reconnaissance::evaluateFitness(float x, float y) const {
             if (obj.found || obj.priority != pri) continue;
             anyLeft = true;
             float d = std::hypot(x - obj.x, y - obj.y);
-            // Scale by priority so higher-priority objects pull harder
             float weighted = d / (float)pri;
             if (weighted < best) best = weighted;
         }
         if (anyLeft) return best;
     }
-    // All objects found → head for the red goal square
     return std::hypot(x - getGoalX(), y - getGoalY());
 }
 
-// ---- Lifecycle -------------------------------------------------------------
 
 void Reconnaissance::reset(std::vector<Agent>& agents) {
     m_finished = false;
@@ -58,15 +37,14 @@ void Reconnaissance::reset(std::vector<Agent>& agents) {
     agentsAtGoal = 0;
     totalAgents = (int)agents.size();
 
-    // High-priority: 2 large objects
     for (int i = 0; i < 2; ++i)
         m_objects.push_back({ 0.2f + frand01() * 0.6f, 0.2f + frand01() * 0.6f,
                                10.0f, 3, false, -1.0f });
-    // Medium: 3 objects
+
     for (int i = 0; i < 3; ++i)
         m_objects.push_back({ frand01() * 0.9f + 0.05f, frand01() * 0.9f + 0.05f,
                                7.0f, 2, false, -1.0f });
-    // Low: 4 objects
+
     for (int i = 0; i < 4; ++i)
         m_objects.push_back({ frand01() * 0.9f + 0.05f, frand01() * 0.9f + 0.05f,
                                5.0f, 1, false, -1.0f });
@@ -86,9 +64,8 @@ void Reconnaissance::reset(std::vector<Agent>& agents) {
 
 void Reconnaissance::update(float dt, std::vector<Agent>& agents) {
     elapsedTime += dt;
-    const float detectR = 0.06f;  // detection radius (normalized)
+    const float detectR = 0.06f;
 
-    // Check each agent against each unfound object
     for (auto& obj : m_objects) {
         if (obj.found) continue;
         for (const auto& a : agents) {
@@ -102,7 +79,6 @@ void Reconnaissance::update(float dt, std::vector<Agent>& agents) {
         }
     }
 
-    // Count agents at goal
     agentsAtGoal = 0;
     for (auto& a : agents) {
         if (a.alive && !a.atGoal && isAtGoal(a.x, a.y))
@@ -110,7 +86,6 @@ void Reconnaissance::update(float dt, std::vector<Agent>& agents) {
         if (a.atGoal) ++agentsAtGoal;
     }
 
-    // Finish: all high-priority found AND ≥50% at goal
     bool allHighFound = true;
     for (const auto& obj : m_objects)
         if (obj.priority == 3 && !obj.found) { allHighFound = false; break; }
@@ -131,7 +106,6 @@ int Reconnaissance::lowFound() const {
     int c = 0; for (const auto& o : m_objects) if (o.priority == 1 && o.found) ++c; return c;
 }
 
-// ---- Drawing ---------------------------------------------------------------
 
 void Reconnaissance::draw(const std::vector<Agent>& agents,
     float xOffset, float widthScale)
@@ -144,38 +118,33 @@ void Reconnaissance::draw(const std::vector<Agent>& agents,
 
     float fieldW = m_fieldSize.x * widthScale;
     float fieldH = m_fieldSize.y;
-    // Keep aspect ratio and centre vertically
     if (fieldH > availH * 0.9f) fieldH = availH * 0.9f;
-    fieldW = fieldH;  // square field
+    fieldW = fieldH;
 
     float yOff = guiH + (availH - fieldH) * 0.5f;
     ImVec2 TL(xOffset + 20.0f, yOff);
     ImVec2 BR(TL.x + fieldW, TL.y + fieldH);
 
-    // Field background
+    viewX = TL.x; viewY = TL.y; viewW = fieldW; viewH = fieldH;
+
     dl->AddRectFilled(TL, BR, IM_COL32(20, 25, 20, 220));
     dl->AddRect(TL, BR, IM_COL32(100, 120, 100, 255), 0.0f, 0, 2.0f);
 
-    // Draw route trails – bigger for high-priority (path width proportional to #agents near it)
-    // (Simplified: draw concentric faint circles around high-priority objects as "route zones")
     for (const auto& obj : m_objects) {
         float px = TL.x + obj.x * fieldW;
         float py = TL.y + obj.y * fieldH;
-        // Big route zone for high priority
         if (obj.priority == 3 && !obj.found) {
             dl->AddCircle(ImVec2(px, py), obj.radius * 3.5f,
                 IM_COL32(255, 80, 80, 30), 32, 1.0f);
             dl->AddCircle(ImVec2(px, py), obj.radius * 2.0f,
                 IM_COL32(255, 80, 80, 50), 32, 1.0f);
         }
-        // Small route zone for low priority
         if (obj.priority == 1 && !obj.found) {
             dl->AddCircle(ImVec2(px, py), obj.radius * 1.5f,
                 IM_COL32(80, 255, 80, 25), 12, 1.0f);
         }
     }
 
-    // Draw objects
     for (const auto& obj : m_objects) {
         float px = TL.x + obj.x * fieldW;
         float py = TL.y + obj.y * fieldH;
@@ -193,7 +162,6 @@ void Reconnaissance::draw(const std::vector<Agent>& agents,
         dl->AddText(ImVec2(px - 6, py - 5), IM_COL32(255, 255, 255, 200), lbl);
     }
 
-    // Green start square (top-left)
     float sqSz = 20.0f;
     float sxPx = TL.x + getStartX() * fieldW;
     float syPx = TL.y + getStartY() * fieldH;
@@ -202,7 +170,6 @@ void Reconnaissance::draw(const std::vector<Agent>& agents,
         IM_COL32(0, 200, 80, 200));
     dl->AddText(ImVec2(sxPx - 6, syPx - 6), IM_COL32(255, 255, 255, 240), "S");
 
-    // Red goal square (bottom-right)
     float gxPx = TL.x + getGoalX() * fieldW;
     float gyPx = TL.y + getGoalY() * fieldH;
     dl->AddRectFilled(ImVec2(gxPx - sqSz / 2, gyPx - sqSz / 2),
@@ -210,7 +177,6 @@ void Reconnaissance::draw(const std::vector<Agent>& agents,
         IM_COL32(220, 40, 40, 200));
     dl->AddText(ImVec2(gxPx - 6, gyPx - 6), IM_COL32(255, 255, 255, 240), "G");
 
-    // Agents
     for (const auto& a : agents) {
         if (!a.alive) continue;
         float px = TL.x + a.x * fieldW;
@@ -219,7 +185,6 @@ void Reconnaissance::draw(const std::vector<Agent>& agents,
         dl->AddCircleFilled(ImVec2(px, py), 3.5f, col);
     }
 
-    // Stats overlay
     char buf[128];
     snprintf(buf, sizeof(buf), "High: %d/2  Med: %d/3  Low: %d/4  Goal: %d/%d",
         highFound(), medFound(), lowFound(), agentsAtGoal, totalAgents);

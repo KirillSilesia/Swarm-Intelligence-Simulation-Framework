@@ -1,15 +1,3 @@
-/*
- * Swarm Intelligence Simulation Framework – main entry point
- *
- * Features:
- *   - Single / Dual simulation mode
- *   - 4 algorithms: PSO, ACO, ABC, FSS  (all fully implemented)
- *   - 3 scenarios: Maze, Reconnaissance, Obstacle Avoidance
- *   - Algorithm-specific visual overlays (pheromone trails, global best, etc.)
- *   - After all simulations finish: "View Reports" button
- *   - Report viewer: Optimisation / Swarm Behaviour / Env Coverage / Comparison
- *   - Export to Excel (.xlsx) with one click
- */
 #include <memory>
 #include <cstdlib>
 #include <ctime>
@@ -34,9 +22,6 @@
 #include "scenarios/Reconnaissance.h"
 #include "scenarios/ObstacleAvoidance.h"
 
- // ============================================================
- //  State
- // ============================================================
 static float        g_dtMult = 1.0f;
 static bool         g_dual = false;
 static int          g_agents = 50;
@@ -48,9 +33,6 @@ static ReportManager g_reports;
 
 static std::shared_ptr<Scenario> g_scenario1, g_scenario2;
 
-// ============================================================
-//  Factories
-// ============================================================
 static std::shared_ptr<SwarmAlgorithm> makeAlgo(int idx) {
     switch (idx) {
     case 0: return std::make_shared<AntColonyOptimization>();
@@ -70,9 +52,6 @@ static std::shared_ptr<Scenario> makeScenario(int idx) {
     return nullptr;
 }
 
-// ============================================================
-//  Control panel (top third of window)
-// ============================================================
 static void renderControlPanel()
 {
     const char* algos[] = { "ACO", "PSO", "ABC", "FSS" };
@@ -92,7 +71,6 @@ static void renderControlPanel()
     ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.12f, 0.12f, 0.16f, 1.0f));
     ImGui::Begin("Control", nullptr, flags);
 
-    // ---- Top row ----
     ImGui::SetCursorPosY(8.0f);
 
     float rightEdge = ImGui::GetWindowWidth() - 130.0f;
@@ -106,7 +84,6 @@ static void renderControlPanel()
 
     ImGui::Separator();
 
-    // ---- Combo boxes ----
     if (g_dual) {
         ImGui::Columns(2, "dual_cols", true);
         ImGui::TextColored(ImVec4(0.4f, 0.9f, 0.4f, 1.0f), "Simulation 1");
@@ -125,7 +102,6 @@ static void renderControlPanel()
 
     ImGui::Spacing();
 
-    // ---- Run button ----
     bool sim1Done = g_sim1.hasFinished();
     bool sim2Done = !g_dual || g_sim2.hasFinished();
     bool allDone = sim1Done && sim2Done;
@@ -146,7 +122,18 @@ static void renderControlPanel()
     }
     ImGui::PopStyleColor();
 
-    // ---- Status ----
+    bool anyRunning = g_sim1.isRunning() || (g_dual && g_sim2.isRunning());
+    if (anyRunning) {
+        ImGui::SameLine(0, 8);
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.7f, 0.2f, 0.2f, 1.0f));
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.3f, 0.3f, 1.0f));
+        if (ImGui::Button("Stop Simulation", ImVec2(160, 0))) {
+            g_sim1.stop();
+            if (g_dual) g_sim2.stop();
+        }
+        ImGui::PopStyleColor(2);
+    }
+
     ImGui::SameLine(0, 16);
     if (g_sim1.isRunning())
         ImGui::TextColored(ImVec4(0.3f, 1.0f, 0.3f, 1.0f), "[Sim 1 Running]");
@@ -160,7 +147,6 @@ static void renderControlPanel()
             ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.3f, 1.0f), "[Sim 2 Finished]");
     }
 
-    // ---- Report button – appears only when all simulations have finished ----
     if (allDone && (g_sim1.hasFinished())) {
         ImGui::SameLine(0, 24);
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.7f, 0.3f, 0.1f, 1.0f));
@@ -179,9 +165,6 @@ static void renderControlPanel()
     ImGui::PopStyleVar(2);
 }
 
-// ============================================================
-//  Render a single simulation (scenario + overlays)
-// ============================================================
 static void renderSim(const Simulation& sim,
     const std::shared_ptr<Scenario>& scen,
     float xOffset, float widthScale)
@@ -189,18 +172,12 @@ static void renderSim(const Simulation& sim,
     if (!scen) return;
     scen->draw(sim.getAgents(), xOffset, widthScale);
 
-    // Algorithm overlay (pheromones, global best, etc.)
-    if (sim.getAlgorithm()) {
-        ImGuiIO& io = ImGui::GetIO();
-        float guiH = io.DisplaySize.y / 3.0f;
-        float availH = io.DisplaySize.y - guiH;
-        sim.getAlgorithm()->drawOverlay(xOffset, widthScale, guiH, availH);
-    }
+    // draw() has just set the scenario's view transform; the overlay reads it
+    // to align itself to the same on-screen rectangle.
+    if (sim.getAlgorithm())
+        sim.getAlgorithm()->drawOverlay(*scen);
 }
 
-// ============================================================
-//  main
-// ============================================================
 int main() {
     srand((unsigned)time(nullptr));
 
@@ -225,7 +202,6 @@ int main() {
     ImGui_ImplOpenGL3_Init("#version 130");
     ImGui::StyleColorsDark();
 
-    // Slightly adjusted style
     ImGuiStyle& style = ImGui::GetStyle();
     style.WindowRounding = 4.0f;
     style.FrameRounding = 3.0f;
@@ -238,21 +214,17 @@ int main() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // ---- Update simulations ----
         float dt = 0.016f * g_dtMult;
         if (g_sim1.isRunning()) g_sim1.update(dt);
         if (g_dual && g_sim2.isRunning()) g_sim2.update(dt);
 
-        // ---- Draw control panel ----
         renderControlPanel();
 
-        // ---- Draw simulation viewports ----
         if (g_dual) {
             float half = io.DisplaySize.x * 0.5f;
             renderSim(g_sim1, g_scenario1, 0.0f, 0.5f);
             renderSim(g_sim2, g_scenario2, half, 0.5f);
 
-            // Divider line
             ImDrawList* dl = ImGui::GetBackgroundDrawList();
             float guiH = io.DisplaySize.y / 3.0f;
             dl->AddLine(ImVec2(half, guiH),
@@ -263,10 +235,8 @@ int main() {
             renderSim(g_sim1, g_scenario1, 0.0f, 1.0f);
         }
 
-        // ---- Report window ----
         g_reports.drawReportWindows();
 
-        // ---- Render ----
         ImGui::Render();
         int dw, dh;
         glfwGetFramebufferSize(window, &dw, &dh);

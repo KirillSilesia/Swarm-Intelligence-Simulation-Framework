@@ -1,1 +1,1 @@
-// GUI.cpp – placeholder; main rendering logic lives in main.cpp
+//main.cpp

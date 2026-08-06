@@ -4,11 +4,9 @@ project(SwarmSim LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# ---- External: GLFW ----------------------------------------------------------
 add_subdirectory(external/glfw)
 find_package(OpenGL REQUIRED)
 
-# ---- ImGui sources -----------------------------------------------------------
 set(IMGUI_DIR      ${CMAKE_SOURCE_DIR}/external/imgui)
 set(IMGUI_BACKENDS ${IMGUI_DIR}/backends)
 
@@ -22,7 +20,6 @@ set(IMGUI_SOURCES
     ${IMGUI_BACKENDS}/imgui_impl_opengl3.cpp
 )
 
-# ---- ImPlot sources ----------------------------------------------------------
 set(IMPLOT_DIR ${CMAKE_SOURCE_DIR}/external/implot)
 set(IMPLOT_SOURCES
     ${IMPLOT_DIR}/implot.cpp
@@ -30,7 +27,6 @@ set(IMPLOT_SOURCES
     ${IMPLOT_DIR}/implot_demo.cpp
 )
 
-# ---- Project sources (explicit list avoids picking up broken stubs) ----------
 set(PROJECT_SOURCES
     src/main.cpp
 
@@ -52,7 +48,6 @@ set(PROJECT_SOURCES
     src/gui/GUI.cpp
 )
 
-# ---- Executable --------------------------------------------------------------
 add_executable(SwarmSim
     ${PROJECT_SOURCES}
     ${IMGUI_SOURCES}
@@ -76,31 +71,23 @@ target_link_libraries(SwarmSim PRIVATE
     OpenGL::GL
 )
 
-# ---- MSVC-specific flags -----------------------------------------------------
 if (MSVC)
     target_compile_options(SwarmSim PRIVATE /W3 /MP)
-    # Suppress a few noisy warnings from third-party headers
     target_compile_definitions(SwarmSim PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif()
 
-# ============================================================
-#  CPack – produce a self-contained Windows installer / zip
-# ============================================================
 set(CPACK_PACKAGE_NAME    "SwarmSimFramework")
 set(CPACK_PACKAGE_VERSION "1.0.0")
 set(CPACK_PACKAGE_VENDOR  "SwarmSim")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY
     "Swarm Intelligence Simulation Framework")
 
-# Copy the exe plus any runtime DLLs into install/bin
 install(TARGETS SwarmSim
         RUNTIME DESTINATION bin)
 
-# Also bundle the Visual C++ redistributable (if present)
 set(CMAKE_INSTALL_UCRT_LIBRARIES TRUE)
 include(InstallRequiredSystemLibraries)
 
-# Generator: NSIS (installer) or ZIP
 set(CPACK_GENERATOR "ZIP;NSIS")
 set(CPACK_NSIS_DISPLAY_NAME "Swarm Intelligence Framework")
 set(CPACK_NSIS_CREATE_ICONS_EXTRA

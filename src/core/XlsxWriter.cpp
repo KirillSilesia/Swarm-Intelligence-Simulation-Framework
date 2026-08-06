@@ -4,9 +4,6 @@
 #include <algorithm>
 #include <cstring>
 
-// ============================================================
-//  CRC-32 (standard polynomial 0xEDB88320)
-// ============================================================
 static uint32_t s_crcTable[256];
 static bool     s_crcInit = false;
 
@@ -29,9 +26,6 @@ uint32_t XlsxWriter::crc32of(const std::string& data) {
     return c ^ 0xFFFFFFFFu;
 }
 
-// ============================================================
-//  ZIP low-level helpers
-// ============================================================
 void XlsxWriter::writeU16(std::vector<uint8_t>& v, uint16_t x) {
     v.push_back(x & 0xFF); v.push_back((x >> 8) & 0xFF);
 }
@@ -43,8 +37,6 @@ void XlsxWriter::writeStr(std::vector<uint8_t>& v, const std::string& s) {
     for (unsigned char c : s) v.push_back(c);
 }
 
-// Append one STORED (uncompressed) ZIP local-file-header + data,
-// and push a central-directory record into dir.
 void XlsxWriter::appendEntry(std::vector<uint8_t>& zip,
     std::vector<ZipEntry>& dir,
     const std::string& name,
@@ -59,7 +51,6 @@ void XlsxWriter::appendEntry(std::vector<uint8_t>& zip,
     uint32_t sz = (uint32_t)data.size();
     uint16_t nl = (uint16_t)name.size();
 
-    // Local file header
     writeU32(zip, 0x04034B50u);  // signature PK\x03\x04
     writeU16(zip, 20);           // version needed
     writeU16(zip, 0);            // flags
@@ -77,9 +68,6 @@ void XlsxWriter::appendEntry(std::vector<uint8_t>& zip,
     dir.push_back(e);
 }
 
-// ============================================================
-//  Public API
-// ============================================================
 void XlsxWriter::addSheet(const std::string& name) {
     m_sheets.push_back({ name, {} });
 }
@@ -89,9 +77,6 @@ void XlsxWriter::writeRow(const std::vector<std::string>& cells) {
     m_sheets.back().rows.push_back(cells);
 }
 
-// ============================================================
-//  XML builders
-// ============================================================
 static std::string xmlEsc(const std::string& s) {
     std::string r; r.reserve(s.size());
     for (char c : s) {
@@ -104,7 +89,6 @@ static std::string xmlEsc(const std::string& s) {
     return r;
 }
 
-// Column index (0-based) → Excel column name (A, B, … Z, AA, …)
 static std::string colName(int col) {
     std::string r;
     ++col;
@@ -213,14 +197,13 @@ std::string XlsxWriter::buildStyles() const {
         "<borders count=\"1\"><border><left/><right/><top/><bottom/><diagonal/></border></borders>"
         "<cellStyleXfs count=\"1\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\"/></cellStyleXfs>"
         "<cellXfs count=\"2\">"
-        "<xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/>"   // normal
-        "<xf numFmtId=\"0\" fontId=\"1\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/>"   // bold
+        "<xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/>"
+        "<xf numFmtId=\"0\" fontId=\"1\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/>"
         "</cellXfs>"
         "</styleSheet>";
 }
 
 std::string XlsxWriter::buildSharedStrings(std::vector<std::string>& outTable) const {
-    // Collect all string values across all sheets
     outTable.clear();
     int total = 0;
     for (const auto& sh : m_sheets)
@@ -265,7 +248,6 @@ std::string XlsxWriter::buildSheet(const Sheet& sh,
                 s += "><v>" + cell + "</v></c>";
             }
             else {
-                // Shared string
                 auto it = std::find(strTable.begin(), strTable.end(), cell);
                 int idx = (it != strTable.end()) ? (int)(it - strTable.begin()) : 0;
                 s += "<c r=\"" + ref + "\" t=\"s\"";
@@ -279,16 +261,12 @@ std::string XlsxWriter::buildSheet(const Sheet& sh,
     return s;
 }
 
-// ============================================================
-//  Save
-// ============================================================
 bool XlsxWriter::save(const std::string& path) const {
     if (m_sheets.empty()) return false;
 
     std::vector<uint8_t>  zip;
     std::vector<ZipEntry> dir;
 
-    // Build shared strings table once
     std::vector<std::string> strTable;
     std::string sharedStr = buildSharedStrings(strTable);
 
@@ -306,41 +284,38 @@ bool XlsxWriter::save(const std::string& path) const {
             sheetXml);
     }
 
-    // Central directory
     uint32_t cdOffset = (uint32_t)zip.size();
     for (const auto& e : dir) {
         uint32_t sz = (uint32_t)e.data.size();
         uint16_t nl = (uint16_t)e.name.size();
-        writeU32(zip, 0x02014B50u);  // PK\x01\x02
-        writeU16(zip, 20);           // version made by
-        writeU16(zip, 20);           // version needed
-        writeU16(zip, 0);            // flags
-        writeU16(zip, 0);            // method: STORED
-        writeU16(zip, 0);            // mod time
-        writeU16(zip, 0);            // mod date
+        writeU32(zip, 0x02014B50u);
+        writeU16(zip, 20); 
+        writeU16(zip, 20);
+        writeU16(zip, 0);
+        writeU16(zip, 0);
+        writeU16(zip, 0);
+        writeU16(zip, 0);
         writeU32(zip, e.crc32);
         writeU32(zip, sz);
         writeU32(zip, sz);
         writeU16(zip, nl);
-        writeU16(zip, 0);  writeU16(zip, 0);  // extra, comment
-        writeU16(zip, 0);  writeU16(zip, 0);  // disk start, int attrib
-        writeU32(zip, 0);                      // ext attrib
+        writeU16(zip, 0);  writeU16(zip, 0); 
+        writeU16(zip, 0);  writeU16(zip, 0); 
+        writeU32(zip, 0);                    
         writeU32(zip, e.offset);
         writeStr(zip, e.name);
     }
 
     uint32_t cdSize = (uint32_t)zip.size() - cdOffset;
 
-    // End of central directory
     writeU32(zip, 0x06054B50u);
     writeU16(zip, 0); writeU16(zip, 0);
     writeU16(zip, (uint16_t)dir.size());
     writeU16(zip, (uint16_t)dir.size());
     writeU32(zip, cdSize);
     writeU32(zip, cdOffset);
-    writeU16(zip, 0);  // comment length
+    writeU16(zip, 0);
 
-    // Write to file
     std::ofstream f(path, std::ios::binary);
     if (!f.is_open()) return false;
     f.write(reinterpret_cast<const char*>(zip.data()), (std::streamsize)zip.size());

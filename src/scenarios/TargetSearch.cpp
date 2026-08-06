@@ -33,7 +33,7 @@ bool TargetSearch::isFinished() const {
 
 void TargetSearch::draw(const std::vector<Agent>& /*agents*/,
     float /*xOffset*/, float /*ws*/) {
-    // ничего не рисуем (placeholder)
+    //placeholder
 }
 
 float TargetSearch::evaluateFitness(float x, float y) const {

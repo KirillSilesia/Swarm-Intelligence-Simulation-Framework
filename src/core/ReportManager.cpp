@@ -7,7 +7,6 @@
 #include <cstdio>
 #include <sstream>
 
-// ---- helpers ----------------------------------------------------------------
 
 std::string ReportManager::fmtTime(float t) {
     char buf[32];
@@ -33,7 +32,6 @@ static void buildTimeArray(const SimulationResult& r,
     }
 }
 
-// ---- public -----------------------------------------------------------------
 
 void ReportManager::setResults(const SimulationResult& r1,
     const SimulationResult* r2,
@@ -58,7 +56,6 @@ void ReportManager::drawReportWindows() {
     ImGui::Begin("Simulation Reports", &m_open,
         ImGuiWindowFlags_NoCollapse);
 
-    // Export button at top-right
     float bw = 180.0f;
     ImGui::SameLine(ImGui::GetWindowWidth() - bw - 8.0f);
     if (ImGui::Button("Export to Excel (.xlsx)", ImVec2(bw, 0))) {
@@ -81,7 +78,6 @@ void ReportManager::drawReportWindows() {
         ImGui::EndPopup();
     }
 
-    // Tabs
     if (ImGui::BeginTabBar("ReportTabs")) {
 
         const char* suf1 = m_dualMode ? " [Sim 1]" : "";
@@ -142,14 +138,12 @@ void ReportManager::drawReportWindows() {
     ImGui::End();
 }
 
-// ---- Optimisation tab -------------------------------------------------------
 
 void ReportManager::drawOptimisationTab(const SimulationResult& r,
     const char* /*suffix*/)
 {
     ImGui::Columns(2, "optcols", false);
 
-    // Left: summary table
     ImGui::TextColored(ImVec4(1, 0.85f, 0.3f, 1), "Summary");
     ImGui::Separator();
     auto row = [](const char* k, const char* v) {
@@ -178,7 +172,6 @@ void ReportManager::drawOptimisationTab(const SimulationResult& r,
 
     ImGui::NextColumn();
 
-    // Right: convergence chart
     std::vector<float> ts, fs, al, sp, di;
     buildTimeArray(r, ts, fs, al, sp, di);
 
@@ -192,7 +185,6 @@ void ReportManager::drawOptimisationTab(const SimulationResult& r,
     ImGui::Columns(1);
 }
 
-// ---- Swarm Behaviour tab ----------------------------------------------------
 
 void ReportManager::drawSwarmBehaviourTab(const SimulationResult& r,
     const char* /*suffix*/)
@@ -223,7 +215,6 @@ void ReportManager::drawSwarmBehaviourTab(const SimulationResult& r,
     }
 }
 
-// ---- Environment Coverage tab ----------------------------------------------
 
 void ReportManager::drawEnvCoverageTab(const SimulationResult& r,
     const char* /*suffix*/)
@@ -234,7 +225,6 @@ void ReportManager::drawEnvCoverageTab(const SimulationResult& r,
 
     char buf[128];
 
-    // Reconnaissance-specific
     if (r.highPriorityFound + r.mediumPriorityFound + r.lowPriorityFound > 0) {
         ImGui::TextUnformatted("Reconnaissance Object Coverage:");
         ImGui::Spacing();
@@ -261,7 +251,6 @@ void ReportManager::drawEnvCoverageTab(const SimulationResult& r,
         }
     }
     else {
-        // Generic stats
         snprintf(buf, sizeof(buf), "Agents reached goal: %d / %d",
             r.agentsAtGoal, r.agentCount);
         ImGui::TextUnformatted(buf);
@@ -274,7 +263,6 @@ void ReportManager::drawEnvCoverageTab(const SimulationResult& r,
             r.completed ? "Yes" : "No");
         ImGui::TextUnformatted(buf);
 
-        // Goal-reaching progress chart
         std::vector<float> ts, fs, al, sp, di;
         buildTimeArray(r, ts, fs, al, sp, di);
         if (!ts.empty()) {
@@ -289,7 +277,6 @@ void ReportManager::drawEnvCoverageTab(const SimulationResult& r,
     }
 }
 
-// ---- Comparison tab ---------------------------------------------------------
 
 void ReportManager::drawComparisonTab() {
     auto metric = [](const char* label,
@@ -378,7 +365,6 @@ void ReportManager::drawComparisonTab() {
     }
 }
 
-// ---- XLSX export ------------------------------------------------------------
 
 std::string ReportManager::exportXlsx(const std::string& path) const {
     XlsxWriter xls;
@@ -391,7 +377,6 @@ std::string ReportManager::exportXlsx(const std::string& path) const {
         return std::to_string(v);
         };
 
-    // ---- Sheet 1: Summary ----
     xls.addSheet("Summary");
     xls.writeRow({ "Metric", "Simulation 1",
                   m_dualMode ? "Simulation 2" : "" });
@@ -413,7 +398,6 @@ std::string ReportManager::exportXlsx(const std::string& path) const {
                   toInt(m_r1.finalAliveAgents),
                   m_dualMode ? toInt(m_r2.finalAliveAgents) : "" });
 
-    // ---- Sheet 2: Convergence (Sim 1) ----
     xls.addSheet("Convergence_Sim1");
     xls.writeRow({ "Time (s)", "Best Fitness", "Alive Agents",
                   "At Goal", "Avg Speed", "Diversity" });
@@ -423,7 +407,6 @@ std::string ReportManager::exportXlsx(const std::string& path) const {
                       toStr(fr.avgSpeed),   toStr(fr.diversity) });
     }
 
-    // ---- Sheet 3: Convergence (Sim 2, dual only) ----
     if (m_dualMode) {
         xls.addSheet("Convergence_Sim2");
         xls.writeRow({ "Time (s)", "Best Fitness", "Alive Agents",
@@ -435,7 +418,6 @@ std::string ReportManager::exportXlsx(const std::string& path) const {
         }
     }
 
-    // ---- Sheet 4: Reconnaissance coverage (if applicable) ----
     bool r1Recon = m_r1.highPriorityFound + m_r1.mediumPriorityFound
         + m_r1.lowPriorityFound > 0;
     bool r2Recon = m_dualMode && (m_r2.highPriorityFound + m_r2.mediumPriorityFound

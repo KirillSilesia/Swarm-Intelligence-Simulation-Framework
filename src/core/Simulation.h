@@ -14,6 +14,10 @@ public:
 
     void update(float dt);
 
+    // Stop a running simulation early, exactly as if the scenario had finished:
+    // freezes updates and finalises the result so a report can be viewed.
+    void stop();
+
     bool isRunning()  const { return m_running; }
     bool hasFinished() const { return m_hasFinished; }
 
@@ -21,8 +25,6 @@ public:
     const SimulationResult& getResult()    const { return m_result; }
     const std::shared_ptr<Scenario>& getScenario()  const { return m_scenario; }
     const std::shared_ptr<SwarmAlgorithm>& getAlgorithm() const { return m_algorithm; }
-
-    void drawOverlay() const;   // forwards to algorithm overlay
 
 private:
     std::vector<Agent>             m_agents;

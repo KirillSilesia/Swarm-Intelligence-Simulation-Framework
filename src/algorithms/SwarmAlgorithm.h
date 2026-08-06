@@ -16,8 +16,8 @@ public:
         Scenario& scenario,
         float dt) = 0;
 
-    // Optional: draw algorithm-specific overlays (pheromones, best position…)
-    virtual void drawOverlay(float /*xOffset*/, float /*widthScale*/,
-        float /*yTop*/, float /*height*/) {
-    }
+    // Draw an algorithm-specific overlay aligned to the scenario's play area.
+    // Read scenario.viewX/viewY/viewW/viewH to map normalized [0,1] coordinates
+    // onto exactly the on-screen rectangle the scenario drew itself into.
+    virtual void drawOverlay(const Scenario& /*scenario*/) {}
 };

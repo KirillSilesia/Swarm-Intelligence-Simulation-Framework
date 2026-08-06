@@ -8,7 +8,7 @@ public:
     const char* getName() const override { return "Artificial Bee Colony"; }
     void initialize(std::vector<Agent>& agents, Scenario& scenario) override;
     void update(std::vector<Agent>& agents, Scenario& scenario, float dt) override;
-    void drawOverlay(float xOffset, float widthScale, float yTop, float height) override;
+    void drawOverlay(const Scenario& scenario) override;
 
 private:
     std::vector<float> m_fitness;
